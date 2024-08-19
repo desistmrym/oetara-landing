@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'pathway-gothic';
+  src: url('./assets/fonts/Pathway_Gothic_One/PathwayGothicOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'alternate-gothic';
+  src: url('./assets/fonts/Alternate_Gothic/AlternateGotNo1D.ttf');
+}
+
+@font-face {
+  font-family: 'europa-grotesk-sh-med';
+  src: url('./assets/fonts/EuropaGroteskSH-Med/EuropaGroteskSH-Med.otf');
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  font-family: 'alternate-gothic', sans-serif;
+  /* overflow: hidden; */
+  /* display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.bg-cover {
+  background-image: url('./assets/images/cover.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+}
+
+.content-area {
+  --g: 0;
+  --s: 820px;
+
+  display: grid;
+  border-radius: 50%;
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .content-area {
+    --s: 700px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 700px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 999px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 350px;
+  }
+}
+
+.content {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+  color: black;
+  background-color: #e5e5e5;
+}
+
+.content:nth-child(1) {
+  clip-path: polygon(50% 50%,.5em 1.2em,0 1em,0 0,100% 0,100% 1em,calc(100% - .5em) 1.2em);
+  --_y: calc(-1*var(--g))
+}
+
+.content:nth-child(2) {
+  clip-path: polygon(50% 50%,calc(100% - 1.2em) 0.5em,calc(100% - 1em) 0,100% 0,100% 100%,calc(100% - 1em) 100%,calc(100% - 1.2em) calc(100% - .5em));
+  --_x: var(--g)
+}
+
+.content:nth-child(3) {
+  clip-path: polygon(50% 50%,calc(100% - .5em) calc(100% - 1.2em),100% calc(100% - 1.2em),100% 100%,0 100%,0 calc(100% - 1em),.5em calc(100% - 1.2em));
+  --_y: var(--g)
+}
+
+.content:nth-child(4) {
+  clip-path: polygon(50% 50%,1.2em .5em,1em 0,0 0,0 100%,1em 100%,1.2em calc(100% - .5em));
+  --_x: calc(-1*var(--g))
+}
+
+.clip1 {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+  color: black;
+  background-color: transparent;
+  clip-path: polygon(50% 50%,.5em 1.2em,0 1em,0 0,100% 0,100% 1em,calc(100% - .5em) 1.2em);
+  --_y: calc(-1*var(--g))
+}
+
+.clip2 {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+  color: black;
+  background-color: transparent;
+  clip-path: polygon(50% 50%,calc(100% - 1.2em) 0.5em,calc(100% - 1em) 0,100% 0,100% 100%,calc(100% - 1em) 100%,calc(100% - 1.2em) calc(100% - .5em));
+  --_x: var(--g)
+}
+
+.clip3 {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+  color: black;
+  background-color: transparent;
+  clip-path: polygon(50% 50%,calc(100% - .5em) calc(100% - 1.2em),100% calc(100% - 1.2em),100% 100%,0 100%,0 calc(100% - 1em),.5em calc(100% - 1.2em));
+  --_y: var(--g)
+}
+
+.clip4 {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  font-size: 0;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+  color: black;
+  background-color: transparent;
+  clip-path: polygon(50% 50%,1.2em .5em,1em 0,0 0,0 100%,1em 100%,1.2em calc(100% - .5em));
+  --_x: calc(-1*var(--g))
+}
+
+.container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  /* border: 4px solid #e5e5e5; */
+  /* box-shadow: 0 0 0px 10px #e5e5e5; */
+}
+
+.slices {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+
+    .slice {
+      /* width: 1px; */
+      height: 100%;
+      /* background-color: #e6e6e6; */
+    }
+
+    .slice-1 {
+      transform: rotate(320deg);
+    }
+
+    .slice-2 {
+      transform: rotate(60deg);
+    }
+
+    .slice-3 {
+      transform: rotate(130deg);
+    }
+
+    .slice-4 {
+      transform: rotate(240deg);
+    }
+}
