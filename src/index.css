@@ -186,6 +186,22 @@ button:focus-visible {
   --_y: calc(-1*var(--g))
 }
 
+#c1:hover {
+  background: transparent;
+}
+
+#c2:hover {
+  background: transparent;
+}
+
+#c3:hover {
+  background: transparent;
+}
+
+#c4:hover {
+  background: transparent;
+}
+
 .clip2 {
   grid-area: 1/1;
   width: var(--s);

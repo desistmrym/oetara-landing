@@ -18,7 +18,6 @@ const Pages = () => {
         let y = (current.offsetTop) + (current.clientHeight / 2);
         let rad = Math.atan2(event.pageX - x, event.pageY - y);
         let rot = (rad * (180 / Math.PI) * -1) + 180;
-        console.log(rot)
 
         current.style.transform = "rotate(" + rot + "deg)";
         // eye.css({
@@ -34,50 +33,72 @@ const Pages = () => {
             <div className="relative pt-6 text-white text-[3rem] leading-5 tracking-[-2px] text-center font-['europa-grotesk-sh-med']">
                 Oetara
             </div>
-            <div className='flex justify-center items-center w-[100%] h-[95vh]'>
+            <div className='flex justify-center items-center w-[100%] h-[93vh]'>
                 <div>
-                    <div className='absolute top-[8%] left-[29%]' style={{zIndex: '0'}}>
+                    <div className='absolute top-[8%] left-[29%] z-0'>
                         <div className='content-area'>
-                            <video
-                                preload="true"
-                                muted
-                                autoPlay
-                                loop
-                                className="rounded-[50%] object-cover clip1"
-                                src={vid_about}
-                                type="video/mp4"
-                            />
-                            <video
-                                preload="true"
-                                muted
-                                autoplay="true"
-                                loop
-                                className="rounded-[50%] object-cover clip2"
-                                src={vid_about}
-                                type="video/mp4"
-                            />
-                            <video
-                                preload="true"
-                                muted
-                                autoplay="true"
-                                loop
-                                className="rounded-[50%] object-cover clip3"
-                                src={vid_about}
-                                type="video/mp4"
-                            />
-                            <video
-                                preload="true"
-                                muted
-                                autoPlay
-                                loop
-                                className="rounded-[50%] object-cover clip4"
-                                src={vid_about}
-                                type="video/mp4"
-                            />
+                            <div className='clip1'>
+                                <div id="c1" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
+                                    <div className='text-white text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div>
+                                </div>
+                                <video
+                                    preload="true"
+                                    muted
+                                    autoPlay
+                                    loop
+                                    className="rounded-[50%] h-[100%] object-cover"
+                                    src={vid_about}
+                                    type="video/mp4"
+                                />
+                            </div>
+                            <div className='clip2'>
+                                <div id="c2" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
+                                    <div className='text-white text-[6vh] text-center pl-[11em] pt-[6.5em]'>Work</div>
+                                </div>
+                                <video
+                                    preload="true"
+                                    muted
+                                    autoPlay
+                                    loop
+                                    className="rounded-[50%] h-[100%] object-cover"
+                                    src={vid_about}
+                                    type="video/mp4"
+                                />
+                            </div>
+                            <div className='clip3'>
+                                <div id="c3" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
+                                    <div className='text-white text-[6vh] text-center pl-[0em] pt-[12.5em]'>Contact</div>
+                                </div>
+                                <video
+                                    preload="true"
+                                    muted
+                                    autoPlay
+                                    loop
+                                    className="rounded-[50%] h-[100%] object-cover"
+                                    src={vid_about}
+                                    type="video/mp4"
+                                />
+                            </div>
+                            <div className='clip4'>
+                                <div id="c4" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
+                                    <div className='text-white text-[6vh] text-center -ml-[11em] pt-[6.5em]'>Service</div>
+                                </div>
+                                <video
+                                    preload="true"
+                                    muted
+                                    autoPlay
+                                    loop
+                                    className="rounded-[50%] h-[100%] object-cover"
+                                    src={vid_about}
+                                    type="video/mp4"
+                                />
+                            </div>
                         </div>
                     </div>
-                    <div className='flex justify-center items-center'>
-                        <img ref={arrowRef} src={arrow} alt="" className='w-[8em]' />
+                    <div id="arrow">
+                        <div className='flex justify-center items-center'>
+                            <img ref={arrowRef} src={arrow} alt="" className='w-[8em]' />
+                        </div>
                     </div>
                 </div>
             </div>
