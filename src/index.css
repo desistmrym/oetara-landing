@@ -115,9 +115,15 @@ button:focus-visible {
   border-radius: 50%;
 }
 
-@media (min-width: 1200px) and (max-width: 1599px) {
+@media (min-width: 1500px) and (max-width: 1699px) {
   .content-area {
-    --s: 800px;
+    --s: 800px
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .content-area {
+    --s: 600px;
   }
 }
 
@@ -132,6 +138,7 @@ button:focus-visible {
 
 @media (min-width: 481px) and (max-width: 999px) {
   .bg-cover {
+    background-image: url('assets/images/cover-mobile.png');
     background-size: cover;
   }
   .content-area {
@@ -141,10 +148,20 @@ button:focus-visible {
 
 @media (max-width: 480px) {
   .bg-cover {
+    background-image: url('assets/images/cover-mobile.png');
     background-size: cover;
   }
   .content-area {
-    --s: 350px;
+    --s: 400px;
+  }
+}
+
+@media (max-width: 380px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 300px;
   }
 }
 
