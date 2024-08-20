@@ -156,12 +156,12 @@ button:focus-visible {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
   .bg-cover {
     background-size: cover;
   }
   .content-area {
-    --s: 300px;
+    --s: 360px;
   }
 }
 

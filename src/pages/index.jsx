@@ -55,7 +55,7 @@ const Pages = () => {
                     <div className='content-area'>
                         <div onClick={(e) => handleModal(e, 'about')} className='clip1'>
                             <div id="c1" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div>
+                                <div className='text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div>
                             </div>
                             <video
                                 preload="true"
@@ -69,7 +69,7 @@ const Pages = () => {
                         </div>
                         <div onClick={(e) => handleModal(e, 'work')} className='clip2'>
                             <div id="c2" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[14em] lg:pl-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Work</div>
+                                <div className='text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[14em] lg:pl-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Work</div>
                             </div>
                             <video
                                 preload="true"
@@ -83,7 +83,7 @@ const Pages = () => {
                         </div>
                         <div onClick={(e) => handleModal(e, 'contact')} className='clip3'>
                             <div id="c3" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[45vh] md:pt-[60vh] lg:pt-[12em]'>Contact</div>
+                                <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[36vh] md:pt-[60vh] lg:pt-[12em]'>Contact</div>
                             </div>
                             <video
                                 preload="true"
@@ -97,7 +97,7 @@ const Pages = () => {
                         </div>
                         <div onClick={(e) => handleModal(e, 'service')} className='clip4'>
                             <div id="c4" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[4vh] lg:text-[6vh] text-center -ml-[10em] md:-ml-[13em] lg:-ml-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
+                                <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center -ml-[10em] md:-ml-[13em] lg:-ml-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
                             </div>
                             <video
                                 preload="true"
