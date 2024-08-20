@@ -118,9 +118,9 @@ const Pages = () => {
                 </div>
             </div>
             {showAbout ? 
-                <div className='fixed top-0 p-16 w-[100%]'>
+                <div className='fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]'>
                     <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
-                        <div className="fixed float-right w-[100%] px-[8em]">
+                        <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                             <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowAbout(false)}>X</div>
                         </div>
                         <About />

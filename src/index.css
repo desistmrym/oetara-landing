@@ -115,56 +115,6 @@ button:focus-visible {
   border-radius: 50%;
 }
 
-@media (min-width: 1500px) and (max-width: 1699px) {
-  .content-area {
-    --s: 800px
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1499px) {
-  .content-area {
-    --s: 600px;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1199px) {
-  .bg-cover {
-    background-size: cover;
-  }
-  .content-area {
-    --s: 700px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 999px) {
-  .bg-cover {
-    background-image: url('assets/images/cover-mobile.png');
-    background-size: cover;
-  }
-  .content-area {
-    --s: 500px;
-  }
-}
-
-@media (max-width: 480px) {
-  .bg-cover {
-    background-image: url('assets/images/cover-mobile.png');
-    background-size: cover;
-  }
-  .content-area {
-    --s: 400px;
-  }
-}
-
-@media (max-width: 390px) {
-  .bg-cover {
-    background-size: cover;
-  }
-  .content-area {
-    --s: 360px;
-  }
-}
-
 .content {
   grid-area: 1/1;
   width: var(--s);
@@ -338,4 +288,88 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
 #serv_hover:hover img {
   transform: scale(1.1);
   transition: 0.9s;
+}
+
+@media (min-width: 1500px) and (max-width: 1699px) {
+  .content-area {
+    --s: 800px
+  }
+
+  .moon1 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .content-area {
+    --s: 800px;
+  }
+
+  .moon1 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 820px;
+  }
+  .moon1 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+  .bg-cover {
+    background-image: url('assets/images/cover-mobile.png');
+    background-size: cover;
+  }
+  .content-area {
+    --s: 700px;
+  }
+  .moon1 {
+    width: 80%;
+    height: 60%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 699px) {
+  .bg-cover {
+    background-image: url('assets/images/cover-mobile.png');
+    background-size: cover;
+  }
+  .content-area {
+    --s: 500px;
+  }
+
+  .moon1 {
+    width: 70%;
+    height: 40%;
+  }
+}
+
+@media (max-width: 499px) {
+  .bg-cover {
+    background-image: url('assets/images/cover-mobile.png');
+    background-size: cover;
+  }
+  .content-area {
+    --s: 400px;
+  }
+  .moon1 {
+    width: 60%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 390px) {
+  .bg-cover {
+    background-size: cover;
+  }
+  .content-area {
+    --s: 360px;
+  }
 }
