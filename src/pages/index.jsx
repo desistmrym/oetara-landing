@@ -1,17 +1,31 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import vid_about from '../assets/video/about.mp4';
 import { arrow, img1, img2, img4, img5 } from '../etc/images';
+import About from '../components/about';
+import Work from '../components/work';
+import Service from '../components/service';
+import Contact from '../components/contact';
 
 const Pages = () => {
     const arrowRef = useRef();
+    const [showAbout, setShowAbout] = useState(false);
+    const [showWork, setShowWork] = useState(false);
+    const [showService, setShowService] = useState(false);
+    const [showContact, setShowContact] = useState(false);
 
     const handleModal = (e, type) => {
-        
+        if (type === 'about') {
+            setShowAbout(!showAbout)
+        } else if (type === 'work') {
+            setShowWork(!showWork)
+        } else if (type === 'service') {
+            setShowService(!showService)
+        } else if (type === 'contact') {
+            setShowContact(!showContact)
+        }
     }
 
     const handleMouse = (event) => {
-        // console.log(arrowRef.current.offsetLeft)
-        // console.log(arrowRef)
         const { current } = arrowRef;
 
         let x = (current.offsetLeft) + (current.clientWidth / 2);
@@ -35,9 +49,9 @@ const Pages = () => {
             </div>
             <div className='flex justify-center items-center w-[100%] h-[93vh]'>
                 <div>
-                    <div className='absolute top-[8%] left-[29%] z-0'>
+                    <div className='absolute left-[10em] top-0  translate-x-[25em] translate-y-[5em] z-0'>
                         <div className='content-area'>
-                            <div className='clip1'>
+                            <div onClick={(e) => handleModal(e, 'about')} className='clip1'>
                                 <div id="c1" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
                                     <div className='text-white text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div>
                                 </div>
@@ -51,7 +65,7 @@ const Pages = () => {
                                     type="video/mp4"
                                 />
                             </div>
-                            <div className='clip2'>
+                            <div onClick={(e) => handleModal(e, 'work')} className='clip2'>
                                 <div id="c2" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
                                     <div className='text-white text-[6vh] text-center pl-[11em] pt-[6.5em]'>Work</div>
                                 </div>
@@ -65,7 +79,7 @@ const Pages = () => {
                                     type="video/mp4"
                                 />
                             </div>
-                            <div className='clip3'>
+                            <div onClick={(e) => handleModal(e, 'contact')} className='clip3'>
                                 <div id="c3" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
                                     <div className='text-white text-[6vh] text-center pl-[0em] pt-[12.5em]'>Contact</div>
                                 </div>
@@ -79,7 +93,7 @@ const Pages = () => {
                                     type="video/mp4"
                                 />
                             </div>
-                            <div className='clip4'>
+                            <div onClick={(e) => handleModal(e, 'service')} className='clip4'>
                                 <div id="c4" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
                                     <div className='text-white text-[6vh] text-center -ml-[11em] pt-[6.5em]'>Service</div>
                                 </div>
@@ -95,132 +109,56 @@ const Pages = () => {
                             </div>
                         </div>
                     </div>
-                    <div id="arrow">
-                        <div className='flex justify-center items-center'>
+                    <div>
+                        <div className='flex justify-center items-center pt-8'>
                             <img ref={arrowRef} src={arrow} alt="" className='w-[8em]' />
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <div className="flex justify-center items-center h-[95vh]">
-                <div className='content-area '>
-                    <div className='cursor-pointer' onClick={(e) => handleModal(e, 'about')}> */}
-                        {/* <div className='absolute z-[99]'>
-                            <div className='flex justify-center'>
-                                <img src={img2} alt="" className="clip1" />
-                            </div>
-                        </div> */}
-                        {/* <video
-                            preload="true"
-                            muted
-                            autoPlay
-                            loop
-                            className="rounded-[50%] h-[100%] object-cover clip1"
-                            src={vid_about}
-                            type="video/mp4"
-                        /> */}
-                    {/* </div> */}
-                    {/* <div className='content'>
-                        <div className='absolute z-[99]'>
-                            <div className='flex justify-center'>
-                                <img src={img2} alt="" className="clip2" />
-                            </div>
+            {showAbout ? 
+                <div className='fixed top-0 p-16 w-[100%]'>
+                    <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
+                        <div className="fixed float-right w-[100%] px-[8em]">
+                            <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowAbout(false)}>X</div>
                         </div>
-                        <video
-                            preload="true"
-                            muted
-                            autoPlay
-                            loop
-                            className="rounded-[50%] h-[100%] object-cover"
-                            src={vid_about}
-                            type="video/mp4"
-                        />
-                    </div>
-                    <div className='content'>
-                        <div className='absolute z-[99]'>
-                            <div className='flex justify-center'>
-                                <img src={img4} alt=""className='clip3' />
-                            </div>
-                        </div>
-                        <video
-                            preload="true"
-                            muted
-                            autoPlay
-                            loop
-                            className="rounded-[50%] h-[100%] object-cover"
-                            src={vid_about}
-                            type="video/mp4"
-                        />
-                    </div>
-                    <div className='content'>
-                        <div className='absolute z-[99]'>
-                            <div className='flex justify-center'>
-                                <img src={img5} alt="" className="clip4" />
-                            </div>
-                        </div>
-                        <video
-                            preload="true"
-                            muted
-                            autoPlay
-                            loop
-                            className="rounded-[50%] h-[100%] object-cover"
-                            src={vid_about}
-                            type="video/mp4"
-                        />
-                    </div> */}
-                {/* </div>
-            </div> */}
-            {/* <div className="mt-[20vh] flex justify-center items-center">
-                <div className="rounded-tl-[100%] w-[450px] h-[450px] bg-white rotate-45 absolute">
-                    <div>
-                        <video
-                            preload="true"
-                            muted
-                            autoPlay
-                            loop
-                            className="h-[450px] rounded-tl-full object-cover w-[100%]"
-                            src={vid_about}
-                            type="video/mp4"
-                        />
-                        <div className='relative'>
-                            <div className='absolute rotate-45 ml-[50vh] z-[9999] text-black'>ada</div>
-                        </div>
+                        <About />
                     </div>
                 </div>
-                <div className="rounded-tr-[100%] w-[450px] h-[450px] bg-white rotate-45 absolute ml-[39em] mt-[39em]">
-                    <video
-                        preload="true"
-                        muted
-                        autoPlay
-                        loop
-                        className="h-[450px] rounded-tr-full object-cover w-[100%]"
-                        src={vid_work}
-                        type="video/mp4"
-                    />
+            : null}
+
+            {showWork ? 
+                <div className='fixed top-0 p-16 w-[100%]'>
+                    <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
+                        <div className="fixed float-right w-[100%] px-[8em]">
+                            <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowWork(false)}>X</div>
+                        </div>
+                        <Work />
+                    </div>
                 </div>
-                <div className="rounded-br-[100%] w-[450px] h-[450px] bg-white rotate-45 absolute top-[67vh] mr-[12px]">
-                    <video
-                        preload="true"
-                        muted
-                        autoPlay
-                        loop
-                        className="h-[450px] rounded-br-full object-cover w-[100%]"
-                        src={vid_about}
-                        type="video/mp4"
-                    />
+            : null}
+
+            {showService ? 
+                <div className='fixed top-0 p-16 w-[100%]'>
+                    <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
+                        <div className="fixed float-right w-[100%] px-[8em]">
+                            <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowService(false)}>X</div>
+                        </div>
+                        <Service />
+                    </div>
                 </div>
-                <div className="rounded-bl-[100%] w-[450px] h-[450px] bg-white rotate-45 absolute ml-[-39em] mt-[38.9em]">
-                    <video
-                        preload="true"
-                        muted
-                        autoPlay
-                        loop
-                        className="h-[450px] rounded-bl-full object-cover w-[100%]"
-                        src={vid_work}
-                        type="video/mp4"
-                    />
+            : null}
+
+            {showContact ? 
+                <div className='fixed top-0 p-16 w-[100%]'>
+                    <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
+                        <div className="w-[100%] fixed float-right px-[8em]">
+                            <div className='text-black w-[100%] text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowContact(false)}>X</div>
+                        </div>
+                        <Contact />
+                    </div>
                 </div>
-            </div> */}
+            : null}
         </div>
     </>
   );

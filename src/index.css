@@ -17,6 +17,16 @@
   src: url('./assets/fonts/EuropaGroteskSH-Med/EuropaGroteskSH-Med.otf');
 }
 
+@font-face {
+  font-family: 'fusion-sans';
+  src: url('./assets/fonts/fusion-sans/PFFusionSansPro-Black-subset.otf');
+}
+
+@font-face {
+  font-family: 'fairweather';
+  src: url('./assets/fonts/fonts/fonnts.com-Fairweather_Regular.otf');
+}
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -43,7 +53,6 @@ a:hover {
 body {
   margin: 0;
   font-family: 'alternate-gothic', sans-serif;
-  /* overflow: hidden; */
   /* display: flex;
   place-items: center;
   min-width: 320px;
@@ -87,6 +96,11 @@ button:focus-visible {
   }
 }
 
+.scroll-bar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 .bg-cover {
   background-image: url('./assets/images/cover.png');
   background-repeat: no-repeat;
@@ -103,7 +117,7 @@ button:focus-visible {
 
 @media (min-width: 1200px) and (max-width: 1599px) {
   .content-area {
-    --s: 700px;
+    --s: 800px;
   }
 }
 
@@ -263,32 +277,48 @@ button:focus-visible {
   /* box-shadow: 0 0 0px 10px #e5e5e5; */
 }
 
-.slices {
-  display: flex;
-  position: relative;
-  width: 100%;
+.close:hover {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.moon1{
+  top: 10%;
+  /* right: 0; */
+  display: block;
+  width: 60%;
   height: 100%;
-  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+  background-image: url('assets/images/moon.png');
+  background-repeat: repeat-x;
+  background-size: 110% 100%;
+  opacity: 0.8;
+  animation-name: moonRotation;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards !important;
+  box-shadow: inset -10px 8px 6px -5px #ffffff, 
+inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255, 0.3215686275);
+}
+@keyframes moonRotation {
+    0% {
+		background-position: 0% 0%;
+    border: 0px solid #00000000;
+	}
+	50% {
+		background-position: 150% 0%;
+    border: 0px solid #00000000;
+	}
+	100% {
+		background-position: 300% 0%;
+    border: 0px solid #00000000;
+	}
+}
 
-    .slice {
-      /* width: 1px; */
-      height: 100%;
-      /* background-color: #e6e6e6; */
-    }
-
-    .slice-1 {
-      transform: rotate(320deg);
-    }
-
-    .slice-2 {
-      transform: rotate(60deg);
-    }
-
-    .slice-3 {
-      transform: rotate(130deg);
-    }
-
-    .slice-4 {
-      transform: rotate(240deg);
-    }
+#serv_hover:hover img {
+  transform: scale(1.1);
+  transition: 0.9s;
 }
