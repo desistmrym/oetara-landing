@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import vid_about from '../assets/video/about.mp4';
-import { arrow, a, oetara } from '../etc/images';
+import vid_work from '../assets/video/work.mp4';
+import vid_contact from '../assets/video/contact.mp4';
+import { arrow, A, W, C, oetara } from '../etc/images';
 import About from '../components/about';
 import Work from '../components/work';
 import Service from '../components/service';
@@ -58,57 +60,72 @@ const Pages = () => {
                 <div className='absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-0'>
                     <div className='content-area'>
                         <div onClick={(e) => handleModal(e, 'about')} className='clip1'>
-                            <div id="c1" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <img src={a} alt="" className='w-[100%] rounded-[50%]' />
-                                {/* <div className='text-about text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div> */}
+                            <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
+                                <img src={A} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
-                            <video
-                                muted
-                                onMouseOver={event => event.target.play()}
-                                onMouseOut={event => event.target.pause()}
-                                className="rounded-[50%] h-[100%] object-cover"
-                                src={vid_about}
-                                type="video/mp4"
-                            />
+                            <div className='absolute z-[999] w-[100%] h-[100%] rounded-[50%]'>
+                                <div className='text-about relative text-about text-white text-[3vh] sm:text-[4vh] lg:text-[5vh] text-center pl-0 pt-[0.2em]'>About</div>
+                            </div>
+                            <div className='flex justify-center items-center w-[100%]'>
+                                <video
+                                    muted
+                                    autoPlay
+                                    loop
+                                    onMouseOver={event => event.target.play()}
+                                    onMouseOut={event => event.target.pause()}
+                                    className="rounded-[50%] w-[50%] h-[100%] object-contain"
+                                    src={vid_about}
+                                    type="video/mp4"
+                                />
+                            </div>
                         </div>
                         <div onClick={(e) => handleModal(e, 'work')} className='clip2'>
-                            <div id="c2" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[14em] lg:pl-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Work</div>
+                            <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
+                                <img src={W} alt="" className='w-[100%] rounded-[50%]' />
+                            </div>
+                            <div className='absolute z-[999] w-[100%] h-[100%] rounded-[50%]'>
+                                <div className='relative text-white text-[3vh] sm:text-[4vh] rotate-90 lg:text-[6vh] text-center pl-0 pb-[48vh] lg:pb-[75vh] pt-0'>Work</div>
                             </div>
                             <video
                                 muted
+                                autoPlay
+                                loop
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={event => event.target.pause()}
-                                className="rounded-[50%] h-[100%] object-cover"
-                                src={vid_about}
+                                className="rounded-[50%] h-[100%] object-contain"
+                                src={vid_work}
                                 type="video/mp4"
                             />
                         </div>
                         <div onClick={(e) => handleModal(e, 'contact')} className='clip3'>
-                            <div id="c3" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[36vh] md:pt-[60vh] lg:pt-[12em]'>Contact</div>
+                            <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
+                                <img src={C} alt="" className='w-[100%] rounded-[50%]' />
+                            </div>
+                            <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
+                                <div className='text-white text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[0em] pt-[36vh] md:pt-[12vh] lg:pt-[15em]'>Contact</div>
                             </div>
                             <video
                                 muted
+                                autoPlayloop
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
-                                src={vid_about}
+                                src={vid_contact}
                                 type="video/mp4"
                             />
                         </div>
                         <div onClick={(e) => handleModal(e, 'service')} className='clip4'>
-                            <div id="c4" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
+                            <div className='absolute z-[99] w-[100%] bg-[#4b4c50] h-[100%] rounded-[50%]'>
                                 <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center -ml-[10em] md:-ml-[13em] lg:-ml-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
                             </div>
-                            <video
+                            {/* <video
                                 muted
                                 onMouseOver={event => event.target.play()}
                                 onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
                                 src={vid_about}
                                 type="video/mp4"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,3 @@
-import img1 from '../assets/images/1st.png';
-import img2 from '../assets/images/2.png';
-import img3 from '../assets/images/3.png';
-import img4 from '../assets/images/s.png';
-import img5 from '../assets/images/4.png';
 import arrow from '../assets/images/compass.png';
 import art1 from '../assets/images/art1.png';
 import serv1 from '../assets/images/serv1.png';
@@ -17,7 +12,9 @@ import service5 from '../assets/svg/service5.svg';
 import service6 from '../assets/svg/service6.svg';
 import service7 from '../assets/svg/service7.svg';
 import oetara from '../assets/images/logo/oetara.png';
-import a from '../assets/svg/A.svg';
+import A from '../assets/images/A.png';
+import W from '../assets/images/W.png';
+import C from '../assets/images/C.png';
 
 const service = [
     {img: service1, client: "Food and Beverages", service: 'KOL'},
@@ -30,11 +27,6 @@ const service = [
 ]
 
 export {
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
     arrow,
     art1,
     serv1,
@@ -43,5 +35,7 @@ export {
     serv4,
     oetara,
     service,
-    a
+    A,
+    W,
+    C
 }

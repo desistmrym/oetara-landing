@@ -171,6 +171,8 @@ button:focus-visible {
 .clip1:hover {
   -webkit-transform: scale(1.03, 1.03);
   transform: scale(1.03, 1.03);
+
+
 }
 
 .clip2:hover {
@@ -186,21 +188,6 @@ button:focus-visible {
 .clip4:hover {
   -webkit-transform: scale(1.03, 1.03);
   transform: scale(1.03, 1.03);
-}
-#c1:hover {
-  background: transparent;
-}
-
-#c2:hover {
-  background: transparent;
-}
-
-#c3:hover {
-  background: transparent;
-}
-
-#c4:hover {
-  background: transparent;
 }
 
 .clip2 {
