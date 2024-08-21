@@ -164,9 +164,29 @@ button:focus-visible {
   color: black;
   background-color: transparent;
   clip-path: polygon(50% 50%,.5em 1.2em,0 1em,0 0,100% 0,100% 1em,calc(100% - .5em) 1.2em);
-  --_y: calc(-1*var(--g))
+  --_y: calc(-1*var(--g));
+  transition: all 0.5s ease-in-out;
 }
 
+.clip1:hover {
+  -webkit-transform: scale(1.03, 1.03);
+  transform: scale(1.03, 1.03);
+}
+
+.clip2:hover {
+  -webkit-transform: scale(1.03, 1.03);
+  transform: scale(1.03, 1.03);
+}
+
+.clip3:hover {
+  -webkit-transform: scale(1.03, 1.03);
+  transform: scale(1.03, 1.03);
+}
+
+.clip4:hover {
+  -webkit-transform: scale(1.03, 1.03);
+  transform: scale(1.03, 1.03);
+}
 #c1:hover {
   background: transparent;
 }

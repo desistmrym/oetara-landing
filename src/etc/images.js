@@ -17,6 +17,7 @@ import service5 from '../assets/svg/service5.svg';
 import service6 from '../assets/svg/service6.svg';
 import service7 from '../assets/svg/service7.svg';
 import oetara from '../assets/images/logo/oetara.png';
+import a from '../assets/svg/A.svg';
 
 const service = [
     {img: service1, client: "Food and Beverages", service: 'KOL'},
@@ -41,5 +42,6 @@ export {
     serv3,
     serv4,
     oetara,
-    service
+    service,
+    a
 }

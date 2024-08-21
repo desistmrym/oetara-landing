@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import vid_about from '../assets/video/about.mp4';
-import { arrow, img1, img2, img4, img5, oetara } from '../etc/images';
+import { arrow, a, oetara } from '../etc/images';
 import About from '../components/about';
 import Work from '../components/work';
 import Service from '../components/service';
@@ -12,6 +12,10 @@ const Pages = () => {
     const [showWork, setShowWork] = useState(false);
     const [showService, setShowService] = useState(false);
     const [showContact, setShowContact] = useState(false);
+    const [showVideo1, setVideo1] = useState(false);
+    const [showVideo2, setVideo2] = useState(false);
+    const [showVideo3, setVideo3] = useState(false);
+    const [showVideo4, setVideo4] = useState(false);
 
     const handleModal = (e, type) => {
         if (type === 'about') {
@@ -55,13 +59,13 @@ const Pages = () => {
                     <div className='content-area'>
                         <div onClick={(e) => handleModal(e, 'about')} className='clip1'>
                             <div id="c1" className='absolute z-[99] w-[100%] bg-[#555458]/70 h-[100%] rounded-[50%]'>
-                                <div className='text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div>
+                                <img src={a} alt="" className='w-[100%] rounded-[50%]' />
+                                {/* <div className='text-about text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[0.5em]'>About</div> */}
                             </div>
                             <video
-                                preload="true"
                                 muted
-                                autoPlay
-                                loop
+                                onMouseOver={event => event.target.play()}
+                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
                                 src={vid_about}
                                 type="video/mp4"
@@ -72,10 +76,9 @@ const Pages = () => {
                                 <div className='text-white text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[14em] lg:pl-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Work</div>
                             </div>
                             <video
-                                preload="true"
                                 muted
-                                autoPlay
-                                loop
+                                onMouseOver={event => event.target.play()}
+                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
                                 src={vid_about}
                                 type="video/mp4"
@@ -86,10 +89,9 @@ const Pages = () => {
                                 <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center pl-[0em] pt-[36vh] md:pt-[60vh] lg:pt-[12em]'>Contact</div>
                             </div>
                             <video
-                                preload="true"
                                 muted
-                                autoPlay
-                                loop
+                                onMouseOver={event => event.target.play()}
+                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
                                 src={vid_about}
                                 type="video/mp4"
@@ -100,10 +102,9 @@ const Pages = () => {
                                 <div className='text-white text-[3vh] md:text-[4vh] lg:text-[6vh] text-center -ml-[10em] md:-ml-[13em] lg:-ml-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
                             </div>
                             <video
-                                preload="true"
                                 muted
-                                autoPlay
-                                loop
+                                onMouseOver={event => event.target.play()}
+                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-cover"
                                 src={vid_about}
                                 type="video/mp4"
