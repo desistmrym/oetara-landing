@@ -302,7 +302,7 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
 
 @media (min-width: 1200px) and (max-width: 1499px) {
   .content-area {
-    --s: 800px;
+    --s: 540px;
   }
 
   .moon1 {
@@ -315,10 +315,11 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
     background-size: cover;
   }
   .content-area {
-    --s: 820px;
+    --s: 540px;
   }
   .moon1 {
     width: 80%;
+    height: 60%;
   }
 }
 
@@ -328,7 +329,7 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
     background-size: cover;
   }
   .content-area {
-    --s: 700px;
+    --s: 600px;
   }
   .moon1 {
     width: 80%;
@@ -360,8 +361,8 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
     --s: 400px;
   }
   .moon1 {
-    width: 60%;
-    height: 30%;
+    width: 80%;
+    height: 40%;
   }
 }
 

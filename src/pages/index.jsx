@@ -129,9 +129,9 @@ const Pages = () => {
             : null}
 
             {showWork ? 
-                <div className='fixed top-0 p-16 w-[100%]'>
+                <div className='fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]'>
                     <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
-                        <div className="fixed float-right w-[100%] px-[8em]">
+                        <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                             <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowWork(false)}>X</div>
                         </div>
                         <Work />
@@ -140,9 +140,9 @@ const Pages = () => {
             : null}
 
             {showService ? 
-                <div className='fixed top-0 p-16 w-[100%]'>
+                <div className='fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]'>
                     <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
-                        <div className="fixed float-right w-[100%] px-[8em]">
+                        <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                             <div className='text-black text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowService(false)}>X</div>
                         </div>
                         <Service />
@@ -151,9 +151,9 @@ const Pages = () => {
             : null}
 
             {showContact ? 
-                <div className='fixed top-0 p-16 w-[100%]'>
+                <div className='fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]'>
                     <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
-                        <div className="w-[100%] fixed float-right px-[8em]">
+                        <div className="w-[100%] fixed float-right px-0 md:px-[6em] lg:px-[8em]">
                             <div className='text-black w-[100%] text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowContact(false)}>X</div>
                         </div>
                         <Contact />
