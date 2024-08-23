@@ -2,7 +2,7 @@ import img1 from '../assets/images/intro.png'
 
 const About = () => {
     return (
-        <div className="pt-10 lg:pt-0 p-4 lg:p-10">
+        <div className="pt-10 lg:pt-8 p-4 lg:p-10">
             <img src={img1} alt="" className="w-[100%]" />
 
             <div className='pt-5 flex flex-wrap lg:flex-nowrap justify-between'>

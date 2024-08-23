@@ -1,4 +1,4 @@
-import arrow from '../assets/images/compass.png';
+import arrow from '../assets/svg/compass.svg';
 import art1 from '../assets/images/art1.png';
 import serv1 from '../assets/images/serv1.png';
 import serv2 from '../assets/images/serv2.png';
@@ -15,6 +15,7 @@ import oetara from '../assets/images/logo/oetara.png';
 import A from '../assets/images/A.png';
 import W from '../assets/images/W.png';
 import C from '../assets/images/C.png';
+import S from '../assets/images/S.png';
 
 const service = [
     {img: service1, client: "Food and Beverages", service: 'KOL'},
@@ -37,5 +38,6 @@ export {
     service,
     A,
     W,
-    C
+    C,
+    S
 }
