@@ -10,14 +10,14 @@ import Contact from '../components/contact';
 
 const Pages = () => {
     const arrowRef = useRef();
+    const aboutRef = useRef();
+    const workRef = useRef();
+    const contactRef = useRef();
+    const serviceRef = useRef();
     const [showAbout, setShowAbout] = useState(false);
     const [showWork, setShowWork] = useState(false);
     const [showService, setShowService] = useState(false);
     const [showContact, setShowContact] = useState(false);
-    const [showVideo1, setVideo1] = useState(false);
-    const [showVideo2, setVideo2] = useState(false);
-    const [showVideo3, setVideo3] = useState(false);
-    const [showVideo4, setVideo4] = useState(false);
 
     const handleModal = (e, type) => {
         if (type === 'about') {
@@ -28,6 +28,30 @@ const Pages = () => {
             setShowService(!showService)
         } else if (type === 'contact') {
             setShowContact(!showContact)
+        }
+    }
+
+    const handlePlay = (type) => {
+        if (type === 'about') {
+            aboutRef.current.play()
+        } else if (type === 'work') {
+            workRef.current.play()
+        } else if (type === 'contact') {
+            contactRef.current.play()
+        } else if (type === 'service') {
+            serviceRef.current.play()
+        }
+    }
+
+    const handleStop = (type) => {
+        if (type === 'about') {
+            aboutRef.current.pause()
+        } else if (type === 'work') {
+            workRef.current.pause()
+        } else if (type === 'contact') {
+            contactRef.current.pause()
+        } else if (type === 'service') {
+            serviceRef.current.pause()
         }
     }
 
@@ -59,7 +83,7 @@ const Pages = () => {
             <div>
                 <div className='absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-0'>
                     <div className='content-area'>
-                        <div onClick={(e) => handleModal(e, 'about')} className='clip1'>
+                        <div onClick={(e) => handleModal(e, 'about')} className='clip1' onMouseOver={() => handlePlay('about')} onMouseOut={() => handleStop('about')}>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
                                 <img src={A} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
@@ -68,8 +92,8 @@ const Pages = () => {
                             </div>
                             <div className='flex justify-center items-center w-[100%]'>
                                 <video
+                                    ref={aboutRef}
                                     muted
-                                    autoPlay
                                     loop
                                     onMouseOver={event => event.target.play()}
                                     onMouseOut={event => event.target.pause()}
@@ -79,7 +103,7 @@ const Pages = () => {
                                 />
                             </div>
                         </div>
-                        <div onClick={(e) => handleModal(e, 'work')} className='clip2'>
+                        <div onClick={(e) => handleModal(e, 'work')} className='clip2' onMouseOver={() => handlePlay('work')} onMouseOut={() => handleStop('work')}>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
                                 <img src={W} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
@@ -87,17 +111,15 @@ const Pages = () => {
                                 <div className='text-work relative text-white h-[100%] text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[10em] pt-[6em] md:pt-[6em]'>Work</div>
                             </div>
                             <video
+                                ref={workRef}
                                 muted
-                                autoPlay
                                 loop
-                                onMouseOver={event => event.target.play()}
-                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-contain"
                                 src={vid_work}
                                 type="video/mp4"
                             />
                         </div>
-                        <div onClick={(e) => handleModal(e, 'contact')} className='clip3'>
+                        <div onClick={(e) => handleModal(e, 'contact')} className='clip3' onMouseOver={() => handlePlay('contact')} onMouseOut={() => handleStop('contact')}>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
                                 <img src={C} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
@@ -105,17 +127,15 @@ const Pages = () => {
                                 <div className='text-white text-contact h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[8vh] lg:pl-[2em] pt-[11em] md:pt-[12vh] lg:pt-[14em]'>Contact</div>
                             </div>
                             <video
+                                ref={contactRef}
                                 muted
-                                autoPlay
                                 loop
-                                onMouseOver={event => event.target.play()}
-                                onMouseOut={event => event.target.pause()}
                                 className="rounded-[50%] h-[100%] object-contain"
                                 src={vid_contact}
                                 type="video/mp4"
                             />
                         </div>
-                        <div onClick={(e) => handleModal(e, 'service')} className='clip4'>
+                        <div onClick={(e) => handleModal(e, 'service')} className='clip4' onMouseOver={() => handlePlay('service')} onMouseOut={() => handleStop('service')}>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
                                 <img src={S} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
@@ -123,8 +143,8 @@ const Pages = () => {
                                 <div className='text-service text-white h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center -ml-[8em] md:-ml-[13em] lg:-ml-[11em] pt-[5.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
                             </div>
                             <video
+                                ref={serviceRef}
                                 muted
-                                autoPlay
                                 loop
                                 className="rounded-[50%] h-[100%] object-contain"
                                 src={vid_about}
@@ -135,7 +155,7 @@ const Pages = () => {
                 </div>
                 <div className='-mt-11'>
                     <div className='flex justify-center items-center w-[100%] h-[100vh]'>
-                        <img ref={arrowRef} src={arrow} alt="" className='w-[4em] lg:w-[14em]' />
+                        <img ref={arrowRef} src={arrow} alt="" className='w-[8em] lg:w-[14em]' />
                     </div>
                 </div>
             </div>
