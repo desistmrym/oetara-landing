@@ -84,7 +84,7 @@ const Pages = () => {
                                 <img src={W} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
                             <div className='absolute z-[999] w-[100%] h-[100%] rounded-[50%]'>
-                                <div className='text-work relative text-white h-[100%] text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[14em] md:pl-[10em] pt-[7em] md:pt-[6em]'>Work</div>
+                                <div className='text-work relative text-white h-[100%] text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[10em] pt-[6em] md:pt-[6em]'>Work</div>
                             </div>
                             <video
                                 muted
@@ -102,7 +102,7 @@ const Pages = () => {
                                 <img src={C} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
-                                <div className='text-white text-contact h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[2em] pt-[44vh] md:pt-[12vh] lg:pt-[14em]'>Contact</div>
+                                <div className='text-white text-contact h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[8vh] lg:pl-[2em] pt-[11em] md:pt-[12vh] lg:pt-[14em]'>Contact</div>
                             </div>
                             <video
                                 muted
@@ -120,7 +120,7 @@ const Pages = () => {
                                 <img src={S} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
-                                <div className='text-service text-white h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center -ml-[10em] md:-ml-[13em] lg:-ml-[11em] pt-[6.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
+                                <div className='text-service text-white h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center -ml-[8em] md:-ml-[13em] lg:-ml-[11em] pt-[5.5em] md:pt-[8em] lg:pt-[6.5em]'>Service</div>
                             </div>
                             <video
                                 muted
