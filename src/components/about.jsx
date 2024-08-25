@@ -68,7 +68,7 @@ const About = () => {
                     </div>
                 
                 : 
-                    <div className='py-2 text-center'>No Team.</div>
+                    <div className='py-2 text-left text-[1.5em] md:text-[2em]'>No Team.</div>
                 }
             </div>
 
@@ -83,7 +83,7 @@ const About = () => {
                         )}
                     </div>
                 : 
-                    <div className='py-2 text-center'>No Team.</div>
+                    <div className='py-2 text-left text-[1.5em] md:text-[2em]'>No Client.</div>
                 }
             </div>
         </div>

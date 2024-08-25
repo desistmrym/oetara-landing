@@ -1,6 +1,25 @@
-import { service } from "../etc/images";
+import { useEffect, useState } from "react";
+import { apiUrl } from "../etc/helper";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Work = () => {
+    const [work, setWork] = useState([]);
+
+    const getWork = () => {
+        let url = apiUrl + 'case-study?acf_format=standard&_fields=id,modified,slug,status,title,acf';
+        axios.get(url)
+        .then(res => {
+            setWork(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    useEffect(() => {
+        getWork()
+    }, []);
     return (
         <div>
             <div className="aboslute">
@@ -14,25 +33,34 @@ const Work = () => {
                 </div>
             </div>
             <div className="relative bg-white w-[100%] -mt-[12vh] md:-mt-[22vh] lg:-mt-[20vh] pb-[6em]">
-                <div className="grid grid-cols-1 md:grid-cols-4 cursor-pointer">
-                    {service.map(item => (
-                        <div id="serv_hover" className="p-2 border">
-                            <div className="flex justify-center w-[100%]">
-                                <img src={item.img} alt="" className="w-[14em] md:w-[100%]" />
-                            </div>
-                            <div className="lg:px-5 flex justify-between font-['pathway-gothic']">
-                                <div className="w-[50%]">
-                                    <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">CLIENT</div>
-                                    <div className="text-[11px] lg:text-md">{item.client}</div>
+                {work.length > 0 ?
+                    <div className="grid grid-cols-1 md:grid-cols-4 cursor-pointer">
+                        {work.map((item, x) => 
+                            <Link key={x} to={"/work/"+item.id}>
+                                <div id="serv_hover" className="px-5 py-3 border text-black">
+                                    <div className="flex justify-center w-[100%]">
+                                        <img src={item.acf.case_gallery[0].sizes.thumbnail} alt="" className="w-[14em] md:w-[100%]" />
+                                    </div>
+                                    <div className="py-5 flex justify-between font-['pathway-gothic']">
+                                        <div className="w-[50%]">
+                                            <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">CLIENT</div>
+                                            <div className="text-[11px] lg:text-md">{item.acf.client[0].post_title}</div>
+                                        </div>
+                                        <div className="w-[50%] text-right">
+                                            <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">SERVICE</div>
+                                            <div className="text-[11px] lg:text-md">{item.acf.deliverables[0].deliverable}</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="w-[50%] text-right">
-                                    <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">SERVICE</div>
-                                    <div className="text-[11px] lg:text-md">{item.service}</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                            </Link>
+                        )}
+                    </div>
+                : 
+                    <div className="text-center h-[20vh] flex justify-center items-center py-2 px-8 text-[1.5em] lg:text-[2em] text-black">No Work.</div>
+                }
+                    {/* {service.map(item => (
+                    ))} */}
+                {/* </div> */}
             </div>
         </div>
     )

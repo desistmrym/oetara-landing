@@ -340,7 +340,7 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
 
 #serv_hover:hover img {
   transform: scale(1.1);
-  transition: 0.9s;
+  transition: 0.5s;
 }
 
 .text-about:hover {
