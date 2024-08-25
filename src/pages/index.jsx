@@ -83,7 +83,7 @@ const Pages = () => {
             <div>
                 <div className='absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-0'>
                     <div className='content-area'>
-                        <div onClick={(e) => handleModal(e, 'about')} className='clip1' onMouseOver={() => handlePlay('about')} onMouseOut={() => handleStop('about')}>
+                        <div onClick={(e) => handleModal(e, 'about')} className='clip1 about-page' onMouseOver={() => handlePlay('about')} onMouseOut={() => handleStop('about')}>
                             <div className='absolute z-[99] w-[100%] h-[100%] rounded-[50%]'>
                                 <img src={A} alt="" className='w-[100%] rounded-[50%]' />
                             </div>
@@ -95,8 +95,6 @@ const Pages = () => {
                                     ref={aboutRef}
                                     muted
                                     loop
-                                    onMouseOver={event => event.target.play()}
-                                    onMouseOut={event => event.target.pause()}
                                     className="rounded-[50%] w-[50%] h-[100%] object-contain"
                                     src={vid_about}
                                     type="video/mp4"

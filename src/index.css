@@ -292,6 +292,52 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
 	}
 }
 
+.card {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+.img-team:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.card-blur {
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 1px);
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+.footer {
+    margin-top: -15vh;
+    background: rgba(0,0,0,0.6);
+}
+
+.info {
+	/* font-family: Inconsolata; */
+    padding-left: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    
+    transition: transform 1s cubic-bezier(.31,1.21,.64,1.02);
+}
+
+.card:hover .info {
+    transform: translateY(0px);
+    opacity: 1;
+    /* transition: .5s; */
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.img-client:hover {
+  transform: scale(0.9);
+  transition: 0.5s;
+}
+
 #serv_hover:hover img {
   transform: scale(1.1);
   transition: 0.9s;
