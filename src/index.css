@@ -23,6 +23,11 @@
 }
 
 @font-face {
+  font-family: 'montserrat-regular';
+  src: url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
   font-family: 'fairweather';
   src: url('./assets/fonts/fonts/fonnts.com-Fairweather_Regular.otf');
 }
