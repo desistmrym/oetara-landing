@@ -52,7 +52,7 @@ const About = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-3 md:p-0 gap-3'>
                         {
                             team.map((item, i) => (
-                                <div key={i} className='h-[25vh] md:h-[50vh]'>
+                                <div key={i} className='h-[25vh] md:h-[40vh]'>
                                     <div class="card">
                                         <img src={item.acf.photo} className='img-team w-[100%] h-[100%] object-cover' />
                                         <div class="footer">
@@ -75,9 +75,9 @@ const About = () => {
             <div className='py-[1em] md:py-[2em] lg:py-[5em]'>
                 <div className='text-[2em] md:text-[3em] lg:text-[4em] font-["fusion-sans"]'>OUR CLIENT</div>
                 {client.length > 0 ? 
-                    <div className="py-2 grid grid-cols-6 gap-3">
+                    <div className="py-2 grid grid-cols-2 md:grid-cols-6">
                         {client.map((item,x) => 
-                            <div key={x} className="bg-black/50 p-1 h-[12vh]">
+                            <div key={x} className="border px-5 py-5 h-[20vh]">
                                 <img src={item.acf.logo} alt="" className='img-client w-[100%] h-[100%] object-contain' />
                             </div>
                         )}

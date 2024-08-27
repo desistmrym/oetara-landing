@@ -186,14 +186,14 @@ const Pages = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className="md:mt-4 lg:mt-5">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
-              <img ref={arrowRef} src={arrow} alt="" className="w-[10em]" />
+              <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[10em]" />
             </div>
           </div>
         </div>
         {showAbout ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]">
+          <div className="fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -209,7 +209,7 @@ const Pages = () => {
         ) : null}
 
         {showWork ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]">
+          <div className="fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -225,7 +225,7 @@ const Pages = () => {
         ) : null}
 
         {showService ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]">
+          <div className="fixed top-0 p-0 md:p-12 lg:p-16 md:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -241,7 +241,7 @@ const Pages = () => {
         ) : null}
 
         {showContact ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]">
+          <div className="fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
             <div className="w-[100%] bg-white overflow-y-scroll scroll-bar">
               <div className="w-[100%] fixed float-right px-0 md:px-[6em] lg:px-[8em]">
                 <div
