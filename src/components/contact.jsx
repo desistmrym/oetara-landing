@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import vid_about from "../assets/video/about.mp4";
+import vid_contact_animated from "../assets/video/building-moving.webp";
 import axios from "axios";
 import { apiUrl } from "../etc/helper";
 
@@ -99,19 +99,13 @@ const Contact = () => {
   }, []);
   return (
     <div className="px-5 md:px-[3em] py-[3em] pt-[3em] mb-[2em] overflow-scroll scroll-bar h-[100vh]">
-      <video
-        preload="true"
-        muted
-        autoPlay
-        loop
-        playsInline
-        webkit-playsinline="true"
-        className="w-[100%] object-cover h-[70vh]"
-        src={vid_about}
-        type="video/mp4"
-      />
+      <img
+          className="w-[100%] object-cover h-[40vh] lg:h-[70vh]"
+          src={vid_contact_animated}
+          alt="About"
+        />
       <div
-        className="relative h-[70vh] w-[100%] z-[99] -mt-[70vh]"
+        className="relative h-[40vh] lg:h-[70vh] w-[100%] z-[99] -mt-[40vh] lg:-mt-[70vh]"
         style={{ background: "rgba(0, 0, 0, 0.5)" }}
       >
         <div className="flex justify-start items-center h-[100%] px-12">
@@ -120,7 +114,7 @@ const Contact = () => {
       </div>
 
       {"acf" in data && (
-        <div className="my-[1em] md:my-[5em] grid grid-cols-1 md:grid-cols-3 gap-[1em] lg:px-[2em]">
+        <div className="my-[1em] md:my-[5em] grid grid-cols-1 lg:grid-cols-3 gap-[1em] lg:px-[2em]">
           <div>
             <div className="text-left text-[2.5em] lg:text-[4em] py-1 md:py-3">ADDRESS</div>
             <div className="py-1 md:py-3 font-['montserrat-regular'] text-[1em] md:text-[1.5em]">
@@ -157,11 +151,11 @@ const Contact = () => {
 
       <div className="bg-black px-5 md:px-10 py-8 md:py-16 text-white">
         <div className="text-[3.5em] lg:text-[6em]">CONTACT US.</div>
-        <div className="pt-[1em] md:pt-[5em] grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3">
+        <div className="pt-[1em] md:pt-[5em] grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-3">
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <input
               type="text"
-              class="pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+              className="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput50"
               aria-label="readonly input example"
               value={name}
@@ -178,7 +172,7 @@ const Contact = () => {
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <input
               type="email"
-              class="pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+              class="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput50"
               aria-label="readonly input example"
               value={email}
@@ -195,7 +189,7 @@ const Contact = () => {
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <input
               type="text"
-              class="pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+              class="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput50"
               aria-label="readonly input example"
               value={subject}
@@ -214,7 +208,7 @@ const Contact = () => {
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <textarea
               type="text"
-              className="h-[30vh] pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+              className="bg-black h-[30vh] pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput50"
               aria-label="readonly input example"
               value={message}
@@ -233,7 +227,7 @@ const Contact = () => {
             <p className="text-white pb-5 text-2xl md:text-[2em] animate-fade-out-down">{success}</p>
         : <div></div>}
         <div className="py-1">
-            <button className="border px-10 py-2 text-[1.5em] md:text-[2em] hover:bg-white hover:text-black" onClick={(e) => handleSend(e)}>SEND IT</button>
+            <button className="border bg-black text-white px-10 py-2 text-[1.5em] md:text-[2em] hover:bg-white hover:text-black" onClick={(e) => handleSend(e)}>SEND IT</button>
         </div>
       </div>
     </div>
