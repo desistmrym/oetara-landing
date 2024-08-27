@@ -44,12 +44,12 @@ const Work = () => {
                                     </div>
                                     <div className="py-5 flex justify-between font-['pathway-gothic']">
                                         <div className="w-[50%]">
-                                            <div className="text-[12px] lg:text-[20px] font -['fusion-sans']">CLIENT</div>
-                                            <div className="text-[11px] lg:text-md">{item.acf.client[0].post_title}</div>
+                                            <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">CLIENT</div>
+                                            <div className="text-[11px] lg:text-lg">{item.acf.client[0].post_title}</div>
                                         </div>
                                         <div className="w-[50%] text-right">
                                             <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">SERVICE</div>
-                                            <div className="text-[11px] lg:text-md">{item.acf.deliverables[0].deliverable}</div>
+                                            <div className="text-[11px] lg:text-lg">{item.acf.service_type[0].name}</div>
                                         </div>
                                     </div>
                                 </div>
