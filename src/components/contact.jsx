@@ -104,6 +104,8 @@ const Contact = () => {
         muted
         autoPlay
         loop
+        playsInline
+        webkit-playsinline="true"
         className="w-[100%] object-cover h-[70vh]"
         src={vid_about}
         type="video/mp4"
@@ -133,7 +135,7 @@ const Contact = () => {
               {data.acf.email}
             </div>
             <div className="pt-2 md:pt-10">
-              <div className="grid grid-cols-6 md:grid-cols-12 gap-3">
+              <div className="grid grid-cols-6 gap-3 md:grid-cols-12">
                 {"socials" in data.acf &&
                   data.acf.socials.map((item, x) => (
                     <a
@@ -153,7 +155,7 @@ const Contact = () => {
         </div>
       )}
 
-      <div className="bg-black px-5 md:px-10 py-8 md:py-16 text-white">
+      <div className="px-5 py-8 text-white bg-black md:px-10 md:py-16">
         <div className="text-[3.5em] lg:text-[6em]">WE ARE READY.</div>
         <div className="pt-[1em] md:pt-[5em] grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3">
           <div class="relative mb-3" data-twe-input-wrapper-init>
