@@ -69,7 +69,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -86,7 +86,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -112,12 +112,21 @@ button:focus-visible {
   background-size: 100% 100vh;
 }
 
+.bg-moon {
+  background-image: url('assets/images/moon.png');
+  background-repeat: no-repeat;
+  border-radius: 100%;
+}
+
 .content-area {
   --g: 0;
   --s: 820px;
 
   display: grid;
   border-radius: 50%;
+  /* background-color: #4f4c52;
+  padding-top: 1em;
+  padding-bottom: 1em; */
 }
 
 .content {
@@ -167,17 +176,22 @@ button:focus-visible {
   z-index: 0;
   transition: .3s, z-index 0s .3s;
   color: black;
-  background-color: transparent;
+  background-color: #4f4c52;
   clip-path: polygon(50% 50%,.5em 1.2em,0 1em,0 0,100% 0,100% 1em,calc(100% - .5em) 1.2em);
   --_y: calc(-1*var(--g));
   transition: all 0.5s ease-in-out;
+  border: 5em solid #4f4c52;
+  margin: 3em;
 }
 
 .clip1:hover{
   -webkit-transform: scale(1.03, 1.03);
   transform: scale(1.03, 1.03);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  background-color: #4f4c52;
+  box-sizing: border-box 1em;
+  clip-path: polygon(50% 50%,.5em 1.2em,0 1em,0 0,100% 0,100% 1em,calc(100% - .5em) 1.2em);
+  --_y: calc(-1*var(--g));
 }
 
 .clip2:hover {
@@ -282,6 +296,10 @@ button:focus-visible {
   box-shadow: inset -10px 8px 6px -5px #ffffff, 
 inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255, 0.3215686275);
 }
+
+iframe {
+  width: 100%!important;
+}
 @keyframes moonRotation {
     0% {
 		background-position: 0% 0%;
@@ -378,9 +396,19 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1499px) {
+@media (min-width: 1300px) and (max-width: 1499px) {
   .content-area {
-    --s: 540px;
+    --s: 800px;
+  }
+
+  .moon1 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+  .content-area {
+    --s: 600px;
   }
 
   .moon1 {

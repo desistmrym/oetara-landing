@@ -1,4 +1,4 @@
-import arrow from '../assets/svg/compass.svg';
+import arrow from '../assets/svg/compass1.svg';
 import art1 from '../assets/images/art1.png';
 import serv1 from '../assets/images/serv1.png';
 import serv2 from '../assets/images/serv2.png';
@@ -9,6 +9,7 @@ import A from '../assets/images/about.png';
 import W from '../assets/images/work.png';
 import C from '../assets/images/contact.png';
 import S from '../assets/images/service.png';
+import moon from '../assets/images/moon.png';
 
 export {
     arrow,
@@ -21,5 +22,6 @@ export {
     A,
     W,
     C,
-    S
+    S,
+    moon
 }

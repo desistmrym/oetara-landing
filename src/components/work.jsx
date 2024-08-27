@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { moon } from "../etc/images";
 
 const Work = () => {
     const [work, setWork] = useState([]);
@@ -38,12 +39,12 @@ const Work = () => {
                         {work.map((item, x) => 
                             <Link key={x} to={"/work/"+item.id}>
                                 <div id="serv_hover" className="px-5 py-3 border text-black">
-                                    <div className="flex justify-center w-[100%]">
-                                        <img src={item.acf.case_gallery[0].sizes.thumbnail} alt="" className="w-[14em] md:w-[100%]" />
+                                    <div className="flex justify-center w-[100%] p-5">
+                                        <img src={item.acf.featured_image} alt="" className="w-[14em] md:w-[100%] h-[20vh]  object-contain" />
                                     </div>
                                     <div className="py-5 flex justify-between font-['pathway-gothic']">
                                         <div className="w-[50%]">
-                                            <div className="text-[12px] lg:text-[20px] font-['fusion-sans']">CLIENT</div>
+                                            <div className="text-[12px] lg:text-[20px] font -['fusion-sans']">CLIENT</div>
                                             <div className="text-[11px] lg:text-md">{item.acf.client[0].post_title}</div>
                                         </div>
                                         <div className="w-[50%] text-right">

@@ -73,11 +73,14 @@ const Pages = () => {
     }
   return (
     <>
-        <div className='bg-cover h-[100vh]' onMouseMove={(event) => handleMouse(event)}>
+        <div className='bg-cover h-[100vh] overflow-hidden' onMouseMove={(event) => handleMouse(event)}>
+            <div style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'absolute', height: '100vh', width: '100%'}}></div>
             <div className="pt-2 text-white text-[3rem] leading-5 tracking-[-2px] text-center font-['europa-grotesk-sh-med']">
                 {/* Oetara */}
-                <div className="flex justify-center">
-                    <img src={oetara} alt="" className='w-[2.5em]' />
+                <div className="absolute w-[100%]">
+                    <div className="flex justify-center">
+                        <img src={oetara} alt="" className='w-[2.5em]' />
+                    </div>
                 </div>
             </div>
             <div>
@@ -151,9 +154,9 @@ const Pages = () => {
                         </div>
                     </div>
                 </div>
-                <div className='-mt-11'>
+                <div className=''>
                     <div className='flex justify-center items-center w-[100%] h-[100vh]'>
-                        <img ref={arrowRef} src={arrow} alt="" className='w-[8em] lg:w-[14em]' />
+                        <img ref={arrowRef} src={arrow} alt="" className='w-[10em]' />
                     </div>
                 </div>
             </div>
@@ -192,7 +195,7 @@ const Pages = () => {
 
             {showContact ? 
                 <div className='fixed top-0 p-0 md:p-12 lg:p-16 w-[100%]'>
-                    <div className='w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar'>
+                    <div className='w-[100%] bg-white overflow-y-scroll scroll-bar'>
                         <div className="w-[100%] fixed float-right px-0 md:px-[6em] lg:px-[8em]">
                             <div className='text-black w-[100%] text-2xl text-right font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer' onClick={() => setShowContact(false)}>X</div>
                         </div>
