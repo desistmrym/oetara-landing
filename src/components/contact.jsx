@@ -155,8 +155,8 @@ const Contact = () => {
         </div>
       )}
 
-      <div className="px-5 py-8 text-white bg-black md:px-10 md:py-16">
-        <div className="text-[3.5em] lg:text-[6em]">WE ARE READY.</div>
+      <div className="bg-black px-5 md:px-10 py-8 md:py-16 text-white">
+        <div className="text-[3.5em] lg:text-[6em]">CONTACT US.</div>
         <div className="pt-[1em] md:pt-[5em] grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-3">
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <input
@@ -214,7 +214,7 @@ const Contact = () => {
           <div class="relative mb-3" data-twe-input-wrapper-init>
             <textarea
               type="text"
-              className="pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:bg-transparent dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+              className="h-[30vh] pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:bg-transparent dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleFormControlInput50"
               aria-label="readonly input example"
               value={message}
