@@ -420,6 +420,52 @@ iframe {
   animation: spin 400ms linear
 }
 
+.compass {
+  border: 1em solid #888;
+  display: block; 
+  width: 25em; 
+  height: 25em;
+  border-radius: 100%;
+  margin: 1% auto 0 auto;
+  background: #e5e5e5;
+}
+
+.needle {
+  width: 1em;
+  margin: 12em 13em 0 auto;
+    animation-name: waggle;
+    animation-duration: 2500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.needle:after {
+  content: '';
+  display: block;
+  border-color: #d33835 transparent;
+	border-style: solid;
+	border-width: 0px 2em 8em 2em;
+  margin-top: 1px; 
+}
+
+.needle:before {
+  content: '';
+  display: block;
+  border-color: #4f4c52 transparent;
+	border-style: solid;
+	border-width: 8em 2em 0px 2em;
+  margin-bottom: -16em;
+}
+
+@keyframes waggle {
+    0%   {transform:rotate(0deg);}
+    10%  {transform:rotate(12deg);}
+    40%  {transform:rotate(-25deg);}
+    60%  {transform:rotate(20deg);}
+    80%  {transform:rotate(-15deg);}
+    100% {transform:rotate(0deg);}
+}
+
 @-moz-keyframes spin { 
   100% { -moz-transform: rotate(360deg); } 
 }
@@ -513,6 +559,23 @@ iframe {
   .moon1 {
     width: 80%;
     height: 40%;
+  }
+  .compass {
+    width: 15em; 
+    height: 15em;
+  }
+
+  .needle {
+    margin: 6em 6.5em 0 auto;
+  }
+
+  .needle:after {
+    border-width: 0px 1em 5em 1em;
+  }
+  
+  .needle:before {
+    border-width: 5em 1em 0px 1em;
+    margin-bottom: -10em;
   }
 }
 
