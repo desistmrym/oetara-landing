@@ -44,9 +44,9 @@ const DetailWork = () => {
                     </Link>
                     <div className="lg:mx-[10%] overflow-y-scroll scroll-bar h-[90vh]" style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}}>
                         <div className="p-5 lg:p-10 text-lg">
-                            <div className="flex gap-3">
+                            <div className="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-10">
                                 <img src={getLogo.acf.logo} alt="logo" className="w-[10em] object-contain" />
-                                <div className="font-bold text-[2em] lg:text-[3em] py-5 text-left leading-[1]" dangerouslySetInnerHTML={{__html: data.title.rendered}} ></div>
+                                <div className="font-bold text-[2em] lg:text-[3em] py-5 text-left leading-[1.5]" dangerouslySetInnerHTML={{__html: data.title.rendered}} ></div>
                             </div>
                             <div className="font-bold flex justify-center flex-wrap lg:flex-nowrap py-2 gap-4 lg:gap-[10em]">
                                 <div className="">Client : {data.acf.client_type[0].name}</div>

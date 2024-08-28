@@ -186,7 +186,7 @@ const Pages = () => {
               </div>
             </div>
           </div>
-          <div className="md:mt-4 lg:mt-5">
+          <div className="-mt-8 md:mt-4 lg:mt-5">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
               <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[10em]" />
             </div>

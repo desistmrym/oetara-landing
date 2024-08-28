@@ -37,7 +37,7 @@ const Work = () => {
                 {work.length > 0 ?
                     <div className="grid grid-cols-1 md:grid-cols-4 cursor-pointer">
                         {work.map((item, x) => 
-                            <Link key={x} to={"/work/"+item.id}>
+                            <a key={x} href={"/work/"+item.id} target="_blank">
                                 <div id="serv_hover" className="px-5 py-3 border text-black">
                                     <div className="flex justify-center w-[100%] p-5">
                                         <img src={item.acf.featured_image} alt="" className="w-[14em] md:w-[100%] h-[20vh]  object-contain" />
@@ -53,7 +53,7 @@ const Work = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
+                            </a>
                         )}
                     </div>
                 : 
