@@ -15,10 +15,6 @@ import Contact from "../components/contact";
 
 const Pages = () => {
   const arrowRef = useRef();
-  const aboutRef = useRef();
-  const workRef = useRef();
-  const contactRef = useRef();
-  const serviceRef = useRef();
   const [showAbout, setShowAbout] = useState(false);
   const [showWork, setShowWork] = useState(false);
   const [showService, setShowService] = useState(false);
@@ -104,21 +100,21 @@ const Pages = () => {
                 onMouseEnter={() => handleAboutHover(true)}
                 onMouseLeave={() => handleAboutHover(false)}
               >
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <img src={A} alt="" className="w-[100%] rounded-[50%]" />
-                </div>
-                <div className="absolute z-[999] w-[100%] h-[100%] rounded-[50%]">
-                  <div className="text-about relative h-[100%] text-white text-[3vh] sm:text-[4vh] lg:text-[5vh] text-center pl-[1.5em] pt-[1em]">
-                    About
+                  <div className="absolute z-[99] p-5 w-[100%] h-[100%] rounded-[50%]">
+                    <img src={A} alt="" className="w-[100%] rounded-[50%]" />
                   </div>
-                </div>
-                <div className="flex justify-center items-center w-[100%]">
-                  <img
-                    className="rounded-[50%] h-[100%] object-cover"
-                    src={isAboutHovered ? vid_about_animated : vid_about_static}
-                    alt="About"
-                  />
-                </div>
+                  <div className="absolute z-[999] p-5 w-[100%] h-[100%] rounded-[50%]">
+                    <div className="text-about relative h-[100%] text-white text-[3vh] sm:text-[4vh] lg:text-[5vh] text-center pl-[1.5em] pt-[1em]">
+                      About
+                    </div>
+                  </div>
+                  <div className="p-5 flex justify-center items-center w-[100%]">
+                    <img
+                      className="rounded-[50%] h-[100%] object-cover"
+                      src={isAboutHovered ? vid_about_animated : vid_about_static}
+                      alt="About"
+                    />
+                  </div>
               </div>
               <div
                 onClick={(e) => handleModal(e, "work")}
@@ -126,16 +122,16 @@ const Pages = () => {
                 onMouseEnter={() => handleWorkHover(true)}
                 onMouseLeave={() => handleWorkHover(false)}
               >
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
                   <img src={W} alt="" className="w-[100%] rounded-[50%]" />
                 </div>
-                <div className="absolute z-[999] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[999] w-[100%] h-[100%] rounded-[50%]">
                   <div className="text-work relative text-white h-[100%] text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[10em] pt-[6em] md:pt-[6em]">
                     Work
                   </div>
                 </div>
                 <img
-                  className="rounded-[50%] h-[100%] object-cover"
+                  className="rounded-[50%] p-5 h-[100%] object-cover"
                   src={isWorkHovered ? vid_work_animated : vid_work_static}
                   alt="Work"
                 />
@@ -146,16 +142,16 @@ const Pages = () => {
                 onMouseEnter={() => handleContactHover(true)}
                 onMouseLeave={() => handleContactHover(false)}
               >
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
                   <img src={C} alt="" className="w-[100%] rounded-[50%]" />
                 </div>
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
                   <div className="text-white text-contact h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[8vh] lg:pl-[2em] pt-[11em] md:pt-[12vh] lg:pt-[14em]">
                     Contact
                   </div>
                 </div>
                 <img
-                  className="rounded-[50%] h-[100%] object-cover"
+                  className="rounded-[50%] p-5 h-[100%] object-cover"
                   src={
                     isContactHovered ? vid_contact_animated : vid_contact_static
                   }
@@ -168,16 +164,16 @@ const Pages = () => {
                 onMouseEnter={() => handleServiceHover(true)}
                 onMouseLeave={() => handleServiceHover(false)}
               >
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
                   <img src={S} alt="" className="w-[100%] rounded-[50%]" />
                 </div>
-                <div className="absolute z-[99] w-[100%] h-[100%] rounded-[50%]">
+                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
                   <div className="text-service text-white h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center -ml-[8em] md:-ml-[13em] lg:-ml-[11em] pt-[5.5em] md:pt-[8em] lg:pt-[6.5em]">
                     Service
                   </div>
                 </div>
                 <img
-                  className="rounded-[50%] h-[100%] object-cover"
+                  className="rounded-[50%] p-5 h-[100%] object-cover"
                   src={
                     isServiceHovered ? vid_service_animated : vid_service_static
                   }
@@ -193,7 +189,7 @@ const Pages = () => {
           </div>
         </div>
         {showAbout ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
+          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -209,7 +205,7 @@ const Pages = () => {
         ) : null}
 
         {showWork ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
+          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -225,7 +221,7 @@ const Pages = () => {
         ) : null}
 
         {showService ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
+          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
                 <div
@@ -241,7 +237,7 @@ const Pages = () => {
         ) : null}
 
         {showContact ? (
-          <div className="fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
+          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
             <div className="w-[100%] bg-white overflow-y-scroll scroll-bar">
               <div className="w-[100%] fixed float-right px-0 md:px-[6em] lg:px-[8em]">
                 <div
