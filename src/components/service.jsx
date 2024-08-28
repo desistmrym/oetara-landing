@@ -1,5 +1,5 @@
 import axios from "axios";
-import { art1, serv1, serv2, serv3, serv4 } from "../etc/images";
+import { art1 } from "../etc/images";
 import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
 
@@ -41,25 +41,6 @@ const Service = () => {
                         </div>
                         : null
                     }
-                    {/* <div className="flex flex-wrap lg:flex-nowrap gap-3 justify-between">
-                        <div className="w-[100%] lg:w-[25%]">
-                        </div>
-                        <div className="w-[100%] lg:w-[25%]">
-                            <img src={serv2} alt="" />
-                            <div className="text-[2em] py-2">Creative Idea makes Creative Output</div>
-                            <div className="text-2xl font-['fairweather']">What we provide : Social media Maintenance, Video Production, Digital Activation</div>
-                        </div>
-                        <div className="w-[100%] lg:w-[25%]">
-                            <img src={serv3} alt="" />
-                            <div className="text-[2em] py-2">Advertise Your Brand</div>
-                            <div className="text-2xl font-['fairweather']">What we provide : Meta Ads, Tiktok Ads, Google Ads, Linkedin Ads</div>
-                        </div>
-                        <div className="w-[100%] lg:w-[25%]">
-                            <img src={serv4} alt="" />
-                            <div className="text-[2em] py-2">Impressive Marketing Strategy</div>
-                            <div className="text-2xl font-['fairweather']">What we provide : Digital Marketing 360, Influencer Marketing with creative Communication, Digital Ads strategy with impressive Accuration</div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </div>
