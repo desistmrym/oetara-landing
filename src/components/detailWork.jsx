@@ -40,22 +40,23 @@ const DetailWork = () => {
         getData();
     },[])
     return (
-        <>
+        <div className="bg-[#4f4c52]">
             {!showLoad ? 
                 <div className="px-3 py-2 lg:px-5 lg:py-5 flex justify-center items-center h-screen font-['montserrat-regular']">
                     {"acf" in data && "acf" in getLogo ? 
                         <div>
                             <Link to="/">
-                                <div className="text-right text-md lg:text-lg lg:mx-[10%] pb-3 text-black hover:underline">Back to all cases</div>
+                                <div className="text-right text-white text-md lg:text-lg lg:mx-[10%] pb-3 hover:underline">Back to Home</div>
                             </Link>
-                            <div className="lg:mx-[10%] overflow-y-scroll scroll-bar h-[90vh]" style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}}>
-                                <div className="p-5 lg:p-10 text-lg">
+                            <div className="lg:mx-[10%] overflow-y-scroll scroll-bar h-[90vh] bg-white rounded-t-[10px]" style={{boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"}}>
+                                <div className="p-5 lg:p-[5em] text-lg">
                                     <div className="flex flex-wrap lg:flex-nowrap gap-3 lg:gap-10">
                                         <img src={getLogo.acf.logo} alt="logo" className="w-[10em] object-contain" />
                                         <div className="font-bold text-[2em] lg:text-[3em] py-5 text-left leading-[1.5]" dangerouslySetInnerHTML={{__html: data.title.rendered}} ></div>
                                     </div>
-                                    <div className="font-bold flex justify-center flex-wrap lg:flex-nowrap py-2 gap-4 lg:gap-[10em]">
-                                        <div className="">Client : {data.acf.client_type[0].name}</div>
+                                    <div className="font-bold flex justify-center flex-wrap lg:flex-nowrap py-2 gap-4 lg:gap-[3em]">
+                                        <div className="">Client Type : {data.acf.client_type[0].name}</div>
+                                        <div className="">Client : {data.acf.client[0].post_title}</div>
                                         <div className="">Service : {data.acf.service_type[0].name}</div>
                                     </div>
                                     <div className="py-3" dangerouslySetInnerHTML={{__html: data.acf.case_description}}></div>
@@ -121,7 +122,7 @@ const DetailWork = () => {
                     </div>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
