@@ -414,6 +414,22 @@ iframe {
   opacity: 1;
 }
 
+.close-x:hover {
+  -webkit-animation:spin 400ms linear;
+  -moz-animation:spin 400ms linear;
+  animation: spin 400ms linear
+}
+
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
+
 @media (min-width: 1500px) and (max-width: 1699px) {
   .content-area {
     --s: 800px
