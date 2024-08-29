@@ -109,7 +109,7 @@ const Pages = () => {
                     </div>
                   </div>
                   <img
-                    className="p-6 rounded-[50%] h-[100%] object-cover"
+                    className="p-8 rounded-[50%] h-[100%] object-cover"
                     src={isAboutHovered ? vid_about_animated : vid_about_static}
                     alt="About"
                   />
