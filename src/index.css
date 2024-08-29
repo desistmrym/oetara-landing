@@ -303,6 +303,13 @@ button:focus-visible {
 inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255, 0.3215686275);
 }
 
+/* Chrome, Safari, AND NOW ALSO the Edge Browser and Firefox */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #needle-landing {
+    margin-top: 1.25rem;
+  }
+}
+
 iframe {
   width: 100%!important;
 }
@@ -566,6 +573,14 @@ iframe {
 }
 
 @media (max-width: 499px) {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    #needle-landing {
+      margin-top: -1rem;
+    }
+  }
+  /* #neddle-landing {
+    margin-top: -2rem!important;
+  } */
   .bg-cover {
     background-image: url('assets/images/cover-mobile.png');
     background-size: cover;

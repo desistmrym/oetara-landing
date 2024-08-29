@@ -180,7 +180,7 @@ const Pages = () => {
               </div>
             </div>
           </div>
-          <div className="-mt-8 lg:mt-5">
+          <div id="needle-landing">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
               <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[10em]" />
             </div>
