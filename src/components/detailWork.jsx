@@ -54,7 +54,7 @@ const DetailWork = () => {
                                         <img src={getLogo.acf.logo} alt="logo" className="w-[10em] object-contain" />
                                         <div className="font-bold text-[2em] lg:text-[3em] py-5 text-left leading-[1.5]" dangerouslySetInnerHTML={{__html: data.title.rendered}} ></div>
                                     </div>
-                                    <div className="font-bold flex justify-center flex-wrap lg:flex-nowrap py-2 gap-4 lg:gap-[3em]">
+                                    <div className="font-bold flex justify-start md:justify-center flex-wrap lg:flex-nowrap py-2 gap-4 lg:gap-[3em]">
                                         <div className="">Client Type : {data.acf.client_type[0].name}</div>
                                         <div className="">Client : {data.acf.client[0].post_title}</div>
                                         <div className="">Service : {data.acf.service_type[0].name}</div>
