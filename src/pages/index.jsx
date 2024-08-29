@@ -108,13 +108,11 @@ const Pages = () => {
                       About
                     </div>
                   </div>
-                  <div className="p-5 flex justify-center items-center w-[100%]">
-                    <img
-                      className="rounded-[50%] h-[100%] object-cover"
-                      src={isAboutHovered ? vid_about_animated : vid_about_static}
-                      alt="About"
-                    />
-                  </div>
+                  <img
+                    className="p-6 rounded-[50%] h-[100%] object-cover"
+                    src={isAboutHovered ? vid_about_animated : vid_about_static}
+                    alt="About"
+                  />
               </div>
               <div
                 onClick={(e) => handleModal(e, "work")}
@@ -182,7 +180,7 @@ const Pages = () => {
               </div>
             </div>
           </div>
-          <div className="-mt-8 md:mt-4 lg:mt-5">
+          <div className="mt-5">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
               <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[10em]" />
             </div>

@@ -184,6 +184,10 @@ button:focus-visible {
   margin: 3em;
 }
 
+.clip1 img {
+  margin-top: 2em;
+}
+
 .clip1:hover {
   -webkit-transform: scale(1.03, 1.03);
   transform: scale(1.03, 1.03);
