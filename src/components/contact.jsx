@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import vid_contact_animated from "../assets/video/building-moving.webp";
 import axios from "axios";
 import { apiUrl } from "../etc/helper";
+import Loader from "./loader";
 
 const Contact = () => {
   const [data, setData] = useState([]);
@@ -237,11 +238,7 @@ const Contact = () => {
           </div>
         </div>
       :
-        <div className="w-[100%] h-screen flex justify-center items-center">
-          <div className="compass">
-            <div className="needle"></div>
-          </div>
-        </div>
+        <Loader />
       }
     </>
   );

@@ -2,6 +2,7 @@ import axios from "axios";
 import { art1 } from "../etc/images";
 import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
+import Loader from "./loader";
 
 const Service = () => {
     const [service, setService] = useState([]);
@@ -51,11 +52,7 @@ const Service = () => {
                     </div>
                 </div>
             :
-                <div className="w-[100%] h-screen flex justify-center items-center">
-                    <div className="compass">
-                    <div className="needle"></div>
-                    </div>
-                </div>
+                <Loader />
             }
         </>
     )

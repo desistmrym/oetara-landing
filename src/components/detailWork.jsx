@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import Loader from "./loader";
 
 const DetailWork = () => {
     let { id } = useParams()
@@ -116,11 +117,7 @@ const DetailWork = () => {
                     }
                 </div>
             : 
-                <div className="w-[100%] h-screen flex justify-center items-center">
-                    <div className="compass">
-                    <div className="needle"></div>
-                    </div>
-                </div>
+                <Loader />
             }
         </div>
     )

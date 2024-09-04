@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
 import axios from "axios";
+import Loader from "./loader";
 
 const Work = () => {
     const [work, setWork] = useState([]);
@@ -68,11 +69,7 @@ const Work = () => {
                     </div>
                 </div>
             : 
-                <div className="w-[100%] h-screen flex justify-center items-center">
-                    <div className="compass">
-                    <div className="needle"></div>
-                    </div>
-                </div>
+                <Loader />
             }
         </>
     )

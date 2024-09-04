@@ -12,9 +12,11 @@ import About from "../components/about";
 import Work from "../components/work";
 import Service from "../components/service";
 import Contact from "../components/contact";
+import { useNavigate } from "react-router-dom";
 
 const Pages = () => {
   const arrowRef = useRef();
+  let navigate = useNavigate()
   const [showAbout, setShowAbout] = useState(false);
   const [showWork, setShowWork] = useState(false);
   const [showService, setShowService] = useState(false);
@@ -24,16 +26,17 @@ const Pages = () => {
   const [isContactHovered, setIsContactHovered] = useState(false);
   const [isAboutHovered, setIsAboutHovered] = useState(false);
 
-  const handleModal = (e, type) => {
-    if (type === "about") {
-      setShowAbout(!showAbout);
-    } else if (type === "work") {
-      setShowWork(!showWork);
-    } else if (type === "service") {
-      setShowService(!showService);
-    } else if (type === "contact") {
-      setShowContact(!showContact);
-    }
+  const handleRedirect = (e, type) => {
+      navigate('/'+type)
+    // if (type === "navigate") {
+    //   setShowAbout(!showAbout);
+    // } else if (type === "work") {
+    //   setShowWork(!showWork);
+    // } else if (type === "service") {
+    //   setShowService(!showService);
+    // } else if (type === "contact") {
+    //   setShowContact(!showContact);
+    // }
   };
 
   const handleMouse = (event) => {
@@ -92,11 +95,11 @@ const Pages = () => {
           </div>
         </div>
         <div>
-          <div className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-0 pt-24">
-            <div className="scale-95 content-area">
+          <div className="cursor-hover absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-0 pt-24">
+            <div className="scale-95 content-area cursor-hover">
               <div
-                onClick={(e) => handleModal(e, "about")}
-                className="clip1 about-page"
+                onClick={(e) => handleRedirect(e, "navigation")}
+                className="clip1 about-page cursor-hover"
                 onMouseEnter={() => handleAboutHover(true)}
                 onMouseLeave={() => handleAboutHover(false)}
               >
@@ -115,8 +118,8 @@ const Pages = () => {
                   />
               </div>
               <div
-                onClick={(e) => handleModal(e, "work")}
-                className="clip2"
+                onClick={(e) => handleRedirect(e, "work")}
+                className="clip2 cursor-hover"
                 onMouseEnter={() => handleWorkHover(true)}
                 onMouseLeave={() => handleWorkHover(false)}
               >
@@ -135,8 +138,8 @@ const Pages = () => {
                 />
               </div>
               <div
-                onClick={(e) => handleModal(e, "contact")}
-                className="clip3"
+                onClick={(e) => handleRedirect(e, "email-us")}
+                className="clip3 cursor-hover"
                 onMouseEnter={() => handleContactHover(true)}
                 onMouseLeave={() => handleContactHover(false)}
               >
@@ -157,8 +160,8 @@ const Pages = () => {
                 />
               </div>
               <div
-                onClick={(e) => handleModal(e, "service")}
-                className="clip4"
+                onClick={(e) => handleRedirect(e, "service")}
+                className="clip4 cursor-hover"
                 onMouseEnter={() => handleServiceHover(true)}
                 onMouseLeave={() => handleServiceHover(false)}
               >
@@ -186,7 +189,7 @@ const Pages = () => {
             </div>
           </div>
         </div>
-        {showAbout ? (
+        {/* {showAbout ? (
           <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
             <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
               <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
@@ -248,7 +251,7 @@ const Pages = () => {
               <Contact />
             </div>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </>
   );

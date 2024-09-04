@@ -10,6 +10,7 @@ export default {
         'spin-slow': 'spin 4s linear infinite',
         shake: 'shake 1s both',
         'fade-out-down': 'fade-out-down 15s ease-out',
+        slidein: "slidein 1s ease 300ms",
       },
 
       keyframes: theme => ({
@@ -39,6 +40,16 @@ export default {
           'to': {
               opacity: '0',
               transform: 'translateY(10px)'
+          },
+        },
+        slidein: {
+          from: {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
           },
         },
       }),

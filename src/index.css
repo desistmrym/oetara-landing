@@ -32,6 +32,16 @@
   src: url('./assets/fonts/fonts/fonnts.com-Fairweather_Regular.otf');
 }
 
+@font-face {
+  font-family: 'oswald-medium';
+  src: url('./assets/fonts/Oswald/static/Oswald-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'oswald-light';
+  src: url('./assets/fonts/Oswald/static/Oswald-Light.ttf');
+}
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -57,7 +67,8 @@ a:hover {
 
 body {
   margin: 0;
-  font-family: 'alternate-gothic', sans-serif;
+  font-family: 'oswald-medium', sans-serif;
+  cursor: url('./assets/cursor/cursor.svg') 64 64, pointer;
   /* display: flex;
   place-items: center;
   min-width: 320px;
@@ -67,6 +78,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.cursor-hover {
+  cursor: url('./assets/cursor/cursor4.svg'), pointer !important;
+  transition: 5s;
 }
 
 /* button {
@@ -301,6 +317,12 @@ button:focus-visible {
   animation-fill-mode: forwards !important;
   box-shadow: inset -10px 8px 6px -5px #ffffff, 
 inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255, 0.3215686275);
+}
+
+.bg-about {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 /* Chrome, Safari, AND NOW ALSO the Edge Browser and Firefox */
@@ -555,6 +577,9 @@ iframe {
     width: 80%;
     height: 60%;
   }
+  .bg-about {
+    background-size: cover;
+  }
 }
 
 @media (min-width: 500px) and (max-width: 699px) {
@@ -608,6 +633,9 @@ iframe {
   .needle:before {
     border-width: 5em 1em 0px 1em;
     margin-bottom: -10em;
+  }
+  .bg-about {
+    background-size: cover;
   }
 }
 
