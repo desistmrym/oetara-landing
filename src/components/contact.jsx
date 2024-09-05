@@ -3,6 +3,8 @@ import vid_contact_animated from "../assets/video/building-moving.webp";
 import axios from "axios";
 import { apiUrl } from "../etc/helper";
 import Loader from "./loader";
+import HeaderLogo from "./headerLogo";
+import { cover_email } from "../etc/images";
 
 const Contact = () => {
   const [data, setData] = useState([]);
@@ -104,48 +106,49 @@ const Contact = () => {
   return (
     <>
       {!showLoad ? 
-        <div className="px-5 md:px-[3em] py-[3em] pt-[3em] mb-[2em] overflow-scroll scroll-bar h-[100vh]">
-          <img
-              className="w-[100%] object-cover h-[40vh] lg:h-[70vh]"
-              src={vid_contact_animated}
-              alt="About"
-            />
-          <div
-            className="relative h-[40vh] lg:h-[70vh] w-[100%] z-[99] -mt-[40vh] lg:-mt-[70vh]"
-            style={{ background: "rgba(0, 0, 0, 0.5)" }}
-          >
-            <div className="flex justify-start items-center h-[100%] px-12">
-              <div className="text-white text-[2em] lg:text-[10em]">CONTACT.</div>
+        <div className="pt-5 lg:pt-4 bg-black text-white">
+          <HeaderLogo />
+
+            <div className='mt-3 bg-email' style={{backgroundImage: `url(${cover_email})`}}>
+              <div className="relative" style={{ background: "rgba(0, 0, 0, 0.5)" }}>
+                <div className="px-[1em] md:px-[2em] lg:px-[5em] pb-[25em]">
+                  <div className='font-["oswald-medium"] text-[1.5em] md:text-[4em] pt-[5.5em] md:pt-[3em] pr-[1.5em] md:pr-[3em]'> 
+                      We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.
+                      <div className='border-t-[.2em] border-t-[#AA2E2C] w-[35%]'></div>
+                  </div>
+                </div>
             </div>
           </div>
 
           {"acf" in data && (
-            <div className="my-[1em] md:my-[5em] grid grid-cols-1 lg:grid-cols-3 gap-[1em] lg:px-[2em]">
-              <div>
-                <div className="text-left text-[2.5em] lg:text-[4em] py-1 md:py-3">ADDRESS</div>
-                <div className="py-1 md:py-3 font-['montserrat-regular'] text-[1em] md:text-[1.5em]">
-                  {data.acf.address}
+            <div className="my-[1em] md:my-[5em] grid grid-cols-1 lg:grid-cols-2 gap-[2em] md:px-[2em] px-[1em] lg:px-[5em]">
+              <div className="grid grid-cols-2 gap-[1em]">
+                <div>
+                  <div className="text-left text-[2.5em] lg:text-[3.5em] py-1 md:py-3 shadow-white">Address</div>
+                  <div className="py-1 md:py-3 font-['oswald'] text-[1em] md:text-[1.5em]">
+                    {data.acf.address}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="text-left text-[2.5em] lg:text-[4em] py-1 md:py-3">
-                  CONTACT US
-                </div>
-                <div className="py-1 md:py-3 text-[1em] md:text-[1.5em] font-['montserrat-regular']">
-                  {data.acf.email}
-                </div>
-                <div className="pt-2 md:pt-10">
-                  <div className="grid grid-cols-6 gap-3 md:grid-cols-12">
-                    {"socials" in data.acf &&
-                      data.acf.socials.map((item, x) => (
-                        <a
-                          href={item.url}
-                          className="text-black hover:text-black hover:scale-[1.2] transition ease-in-out"
-                          target="_blank"
-                        >
-                          <i className={`dashicons ${item.icon} text-[2em]`}></i>
-                        </a>
-                      ))}
+                <div>
+                  <div className="text-left text-[2.5em] lg:text-[3.5em] py-1 md:py-3 shadow-white">
+                    Contact
+                  </div>
+                  <div className="py-1 md:py-3 text-[1em] md:text-[1.5em] font-['oswald']">
+                    {data.acf.email}
+                  </div>
+                  <div className="pt-2 md:pt-10">
+                    <div className="grid grid-cols-3">
+                      {"socials" in data.acf &&
+                        data.acf.socials.map((item, x) => (
+                          <a
+                            href={item.url}
+                            className="text-white hover:text-white hover:scale-[1.2] transition ease-in-out"
+                            target="_blank"
+                          >
+                            <i className={`dashicons ${item.icon} text-[2em] md:text-[5em]`}></i>
+                          </a>
+                        ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -155,13 +158,17 @@ const Contact = () => {
             </div>
           )}
 
-          <div className="bg-black px-5 md:px-10 py-8 md:py-16 text-white">
-            <div className="text-[3.5em] lg:text-[6em]">CONTACT US.</div>
+          <div className="bg-black px-5 md:px-10 lg:px-[5em] py-8 md:py-16 text-white">
+            <div className="text-[2.5em] lg:text-[3.5em]">Contact Us & Let’s Collaborate!</div>
+            <div className="text-[1.5em] py-4">
+              <div>Say us a Hello. Get to know each other. Tell us your story. We listen. We tell you our story. You listen. Then you ask simple question. We answer. We ask you back. You answer. And then we getting closer and…</div>
+              <div className="pt-8">Oh hey, we haven’t even start the conversation, but it looks like we already miss you. Please drop us a line.</div>
+            </div>
             <div className="pt-[1em] md:pt-[5em] grid grid-cols-1 lg:grid-cols-3 gap-1 md:gap-3">
-              <div class="relative mb-3" data-twe-input-wrapper-init>
+              <div class="relative mb-3 mt-8 md:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="text"
-                  className="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  className="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-black data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-black dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={name}
@@ -170,15 +177,15 @@ const Contact = () => {
                 <p className={`mt-1 text-left text-xl md:text-2xl text-red-600 ${"name" in errors && errors.name !== "" ? 'animate-shake' : null}`}>{"name" in errors && errors.name !== "" ? errors.name : null}</p>
                 <label
                   for="exampleFormControlInput50"
-                  class="text-[1.5em] md:text-[2em] lg:text-[3em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+                  class="text-[1.5em] md:text-[2em] -mt-[2em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-white shadow-white dark:peer-focus:text-primary"
                 >
                   NAME
                 </label>
               </div>
-              <div class="relative mb-3" data-twe-input-wrapper-init>
+              <div class="relative mb-3 mt-8 md:mt-12 lg:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="email"
-                  class="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={email}
@@ -187,15 +194,15 @@ const Contact = () => {
                 <p className={`mt-1 text-left text-xl md:text-2xl text-red-600 ${"email" in errors && errors.email !== "" ? 'animate-shake' : null}`}>{"email" in errors && errors.email !== "" ? errors.email : null}</p>
                 <label
                   for="exampleFormControlInput50"
-                  class="text-[1.5em] lg:text-[2.5em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+                  class="text-[1.5em] md:text-[2em] -mt-[2em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-white shadow-white dark:peer-focus:text-primary"
                 >
                   EMAIL
                 </label>
               </div>
-              <div class="relative mb-3" data-twe-input-wrapper-init>
+              <div class="relative mb-3 mt-8 md:mt-12 lg:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="text"
-                  class="bg-black pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={subject}
@@ -204,17 +211,17 @@ const Contact = () => {
                 <p className={`mt-1 text-left text-xl md:text-2xl text-red-600 ${"subject" in errors && errors.subject !== "" ? 'animate-shake' : null}`}>{"subject" in errors && errors.subject !== "" ? errors.subject : null}</p>
                 <label
                   for="exampleFormControlInput50"
-                  class="text-[1.5em] lg:text-[2.5em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+                  class="text-[1.5em] md:text-[2em] -mt-[2em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem] peer-data-[twe-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-white shadow-white dark:peer-focus:text-primary"
                 >
                   SUBJECT
                 </label>
               </div>
             </div>
-            <div className="py-1 md:py-8">
-              <div class="relative mb-3" data-twe-input-wrapper-init>
+            <div className="py-3 mt-0 md:mt-12">
+              <div class="relative mb-3 mt-8 md:mt-0" data-twe-input-wrapper-init>
                 <textarea
                   type="text"
-                  className="bg-black h-[30vh] pt-6 md:pt-12 text-[1.5em] lg:text-[2.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  className="bg-white text-black h-[30vh] text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={message}
@@ -223,7 +230,7 @@ const Contact = () => {
                 <p className={`mt-1 text-left text-xl md:text-2xl text-red-600 ${"message" in errors && errors.message !== "" ? 'animate-shake' : null}`}>{"message" in errors && errors.message !== "" ? errors.message : null}</p>
                 <label
                   for="exampleFormControlInput50"
-                  class="text-[1.5em] lg:text-[2.5em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem]  motion-reduce:transition-none dark:text-neutral-400 dark:peer-focus:text-primary"
+                  class="text-[1.5em] md:text-[2em] -mt-[2em] pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.1rem] lg:peer-focus:-translate-y-[.5rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[twe-input-state-active]:-translate-y-[0.9rem]  motion-reduce:transition-none dark:text-white shadow-white dark:peer-focus:text-primary"
                 >
                   MESSAGE
                 </label>

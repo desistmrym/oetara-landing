@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { apiUrl } from '../etc/helper'
 import axios from 'axios';
 import Loader from './loader';
-import { cover_about, huruf_a, huruf_e, huruf_o, huruf_r, huruf_t, oetara, paper_bottom, paper_top } from '../etc/images';
+import { cover_about, huruf_a, huruf_e, huruf_o, huruf_r, huruf_t, paper_bottom, paper_top } from '../etc/images';
+import HeaderLogo from './headerLogo';
 
 const About = () => {
     const [team, setTeam] = useState([]);
@@ -45,9 +46,7 @@ const About = () => {
         <>
             {!showLoad ? 
                 <div className="pt-5 lg:pt-4 bg-black text-white">
-                    <div className='flex justify-center w-[100%]'>
-                        <img src={oetara} alt="logo" className='w-[30%] lg:w-[10%]' />
-                    </div>
+                    <HeaderLogo />
 
                     <div className='mt-3 px-[1em] md:px-[2em] lg:px-[5em] pb-[25em] bg-about' style={{backgroundImage: `url(${cover_about})`}}>
                         <div className='font-["oswald-medium"] text-[1.5em] md:text-[4em] pt-[5.5em] md:pt-[3em] pr-[1.5em] md:pr-[3em]'> 
@@ -75,7 +74,7 @@ const About = () => {
                         <div className='pt-10'>
                             <img src={paper_top} alt="paper" className='w-[100%] object-cover' />
                             <div className='bg-white text-black px-[1em] md:px-[2em] lg:px-[5em] text-center'>
-                                <div className='uppercase text-[1.5em] md:text-[3.5em] font-["oswald-medium"] md:-mt-5' style={{textShadow: '4px 4px 10px rgba(0,0,0,0.6)'}}>
+                                <div className='uppercase text-[1.5em] md:text-[3.5em] font-["oswald-medium"] md:-mt-5 shdaow-black'>
                                     {isAlpha['o'] ? 
                                         'ORGANIC OUTCOME'
                                     : isAlpha['e'] ? 
@@ -113,7 +112,7 @@ const About = () => {
                     </div>
                     
                     <div className='pt-[1em] md:pt-[2em] lg:pt-[5em] px-[1em] md:px-[2em] lg:px-[5em]'>
-                        <div className='text-[1.5em] md:text-[3em] lg:text-[3.5em] text-center font-["oswald-medium"] pb-6' style={{textShadow: '4px 4px 10px rgba(255,255,255,0.6)'}}>OUR NAVIGATORS</div>
+                        <div className='text-[1.5em] md:text-[3em] lg:text-[3.5em] text-center font-["oswald-medium"] pb-6 shadow-white'>OUR NAVIGATORS</div>
                         {team.length > 0 ? 
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'>
                                 {
@@ -136,7 +135,7 @@ const About = () => {
                     </div>
 
                     <div className='py-[1em] md:py-[2em] lg:py-[5em] px-[1em] md:px-[2em] lg:px-[5em] text-center'>
-                        <div className='text-[1.5em] md:text-[3em] lg:text-[3.5em] font-["oswald-medium"]' style={{textShadow: '4px 4px 10px rgba(255,255,255,0.6)'}}>OUR CLIENT</div>
+                        <div className='text-[1.5em] md:text-[3em] lg:text-[3.5em] font-["oswald-medium"] shadow-white'>OUR CLIENT</div>
                         {client.length > 0 ? 
                             <div className="py-5 grid grid-cols-2 md:grid-cols-3 gap-1 lg::gap-8">
                                 {client.map((item,x) => 

@@ -8,6 +8,7 @@ import S from '../assets/images/service.png';
 import moon from '../assets/images/moon.png';
 import loader from '../assets/images/compass-load.gif';
 import cover_about from '../assets/images/cover-about.png';
+import cover_email from '../assets/images/cover-email.png';
 import huruf_a from '../assets/images/font/huruf-a.png';
 import huruf_e from '../assets/images/font/huruf-e.png';
 import huruf_o from '../assets/images/font/huruf-o.png';
@@ -28,6 +29,7 @@ export {
     moon,
     loader,
     cover_about,
+    cover_email,
     huruf_a,
     huruf_e,
     huruf_o,

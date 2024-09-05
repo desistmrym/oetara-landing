@@ -42,6 +42,11 @@
   src: url('./assets/fonts/Oswald/static/Oswald-Light.ttf');
 }
 
+@font-face {
+  font-family: 'oswald';
+  src: url('./assets/fonts/Oswald/Oswald-VariableFont_wght.ttf');
+}
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -323,6 +328,20 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
+}
+
+.bg-email {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.shadow-black {
+  text-shadow: 4px 4px 10px rgba(0,0,0,0.6);
+}
+
+.shadow-white {
+  text-shadow: 4px 4px 10px rgba(255,255,255,0.6);
 }
 
 /* Chrome, Safari, AND NOW ALSO the Edge Browser and Firefox */
