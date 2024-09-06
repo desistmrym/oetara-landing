@@ -168,7 +168,7 @@ const Contact = () => {
               <div class="relative mb-3 mt-8 md:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="text"
-                  className="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-black data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-black dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  className="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full  border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-black data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-black dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={name}
@@ -185,7 +185,7 @@ const Contact = () => {
               <div class="relative mb-3 mt-8 md:mt-12 lg:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="email"
-                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full  border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={email}
@@ -202,7 +202,7 @@ const Contact = () => {
               <div class="relative mb-3 mt-8 md:mt-12 lg:mt-0" data-twe-input-wrapper-init>
                 <input
                   type="text"
-                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  class="bg-white text-black text-[1.5em] peer block min-h-[auto] w-full  border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={subject}
@@ -221,7 +221,7 @@ const Contact = () => {
               <div class="relative mb-3 mt-8 md:mt-0" data-twe-input-wrapper-init>
                 <textarea
                   type="text"
-                  className="bg-white text-black h-[30vh] text-[1.5em] peer block min-h-[auto] w-full rounded border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
+                  className="bg-white text-black h-[30vh] text-[1.5em] peer block min-h-[auto] w-full  border-b-2 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput50"
                   aria-label="readonly input example"
                   value={message}
