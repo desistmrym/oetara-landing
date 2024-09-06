@@ -336,6 +336,12 @@ inset 20px -20px 40px 30px rgba(0, 0, 0, 0.9), 7px -6px 14px rgba(255, 255, 255,
   background-attachment: fixed;
 }
 
+.bg-service {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .shadow-black {
   text-shadow: 4px 4px 10px rgba(0,0,0,0.6);
 }
@@ -467,6 +473,31 @@ iframe {
 }
 
 .teams:hover .overlay {
+  opacity: 1;
+}
+
+.works {
+  position: relative;
+  color: white;
+}
+
+.works .overlay {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+  padding: 0 3em;
+}
+
+.works:hover .overlay {
   opacity: 1;
 }
 

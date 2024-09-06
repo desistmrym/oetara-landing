@@ -117,8 +117,8 @@ const Contact = () => {
                       <div className='border-t-[.2em] border-t-[#AA2E2C] w-[35%]'></div>
                   </div>
                 </div>
+              </div>
             </div>
-          </div>
 
           {"acf" in data && (
             <div className="my-[1em] md:my-[5em] grid grid-cols-1 lg:grid-cols-2 gap-[2em] md:px-[2em] px-[1em] lg:px-[5em]">
