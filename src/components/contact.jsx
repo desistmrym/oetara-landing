@@ -139,15 +139,26 @@ const Contact = () => {
                   <div className="pt-2 md:pt-10">
                     <div className="grid grid-cols-3">
                       {"socials" in data.acf &&
-                        data.acf.socials.map((item, x) => (
+                        data.acf.socials.map((item, x) => {
+                          let ico = '';
+                          let dsply = '';
+
+                          if (item.icon.indexOf('dashicon') > -1) {
+                            ico =  <i className={`dashicons ${item.icon} text-[2em] md:text-[5em]`}></i>
+                          } else {
+                            ico = <img src={item.icon} alt="" className="w-[1.5em] md:w-[4.5em] object-contain" /> 
+                            dsply = 'flex'
+                          }
+                          return (
                           <a
                             href={item.url}
-                            className="text-white hover:text-white hover:scale-[1.2] transition ease-in-out"
+                            className={`text-white hover:text-white hover:scale-[1.2] transition ease-in-out ${dsply}`}
                             target="_blank"
+                            key={x}
                           >
-                            <i className={`dashicons ${item.icon} text-[2em] md:text-[5em]`}></i>
+                            {ico}
                           </a>
-                        ))}
+                        )})}
                     </div>
                   </div>
                 </div>
