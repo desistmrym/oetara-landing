@@ -9,7 +9,7 @@ const HeaderLogo = () => {
     }
 
     return (
-        <div className='flex justify-center w-[100%]' onClick={() => handleClick()}>
+        <div className='flex justify-center w-[100%] cursor-hover' onClick={() => handleClick()}>
             <img src={oetara} alt="logo" className='w-[30%] lg:w-[10%]' />
         </div>
     )

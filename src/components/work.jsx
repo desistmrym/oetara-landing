@@ -9,12 +9,20 @@ const Work = () => {
     const [work, setWork] = useState([]);
     const [showLoad, setShowLoad] = useState(false)
 
+    const sort = (array) => {
+        return array.sort((a,b) => {
+            return a.acf.column_order - b.acf.column_order 
+        })
+    }
+    
     const getWork = () => {
         setShowLoad(true)
         let url = apiUrl + 'case-study?acf_format=standard&_fields=id,modified,slug,status,title,acf';
         axios.get(url)
         .then(res => {
-            setWork(res.data)
+            const { data } = res;
+            let sort_column = sort(data);
+            setWork(sort_column)
             setShowLoad(false)
         })
         .catch(() => {
@@ -55,9 +63,9 @@ const Work = () => {
                     <div>
                         <div className="w-[100%]">
                             {work.length > 0 ?
-                                <div className="grid grid-cols-1 md:grid-cols-3  cursor-pointer">
+                                <div className="grid grid-cols-1 md:grid-cols-3">
                                     {work.map((item, x) => 
-                                        <a key={x} href={"/work/"+item.id} target="_blank">
+                                        <a key={x} href={"/work/"+item.id} className="cursor-hover" target="_blank">
                                             <div className="px-3 py-3 text-black works text-center h-full">
                                                 <img src={item.acf.featured_image} alt="" className="w-[14em] md:w-[100%] h-[100%] object-cover" />
                                                 <div className="overlay">

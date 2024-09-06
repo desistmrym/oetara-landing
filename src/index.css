@@ -86,7 +86,7 @@ h1 {
 }
 
 .cursor-hover {
-  cursor: url('./assets/cursor/cursor4.svg'), pointer !important;
+  cursor: url('./assets/cursor/cursor-hover.svg'), pointer !important;
   transition: 5s;
 }
 

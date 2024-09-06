@@ -68,7 +68,7 @@ const DetailWork = () => {
                                         </tr>
                                     </table>
                                     <div className="py-5" >
-                                        <a href="#" target="_blank" className="underline text-white">Visit Website</a>
+                                        <a href={data.acf.client_website} target="_blank" className="underline text-white cursor-hover">Visit Website</a>
                                     </div>
                                 </div>
                             </div>

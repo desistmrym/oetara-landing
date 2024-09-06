@@ -6,10 +6,24 @@ import { cover_about, huruf_a, huruf_e, huruf_o, huruf_r, huruf_t, paper_bottom,
 import HeaderLogo from './headerLogo';
 
 const About = () => {
+    const [content, setContent] = useState([]);
     const [team, setTeam] = useState([]);
     const [client, setClient] = useState([]);
     const [showLoad, setShowLoad] = useState(false);
     const [isAlpha, setIsAlpha] = useState({o: true, e: false, t: false, a1: false, r: false, a2: false})
+
+    const getNavigator = () => {
+        setShowLoad(true)
+        const url = apiUrl + 'navigator?acf_format=standard&_fields=id,modified,slug,status,title,acf';
+        axios.get(url)
+        .then(res => {
+            setContent(res.data[0])
+            setShowLoad(false)
+        })
+        .catch(() => {
+            setShowLoad(false)
+        })
+    }
 
     const getTeam = () => {
         setShowLoad(true)
@@ -38,6 +52,7 @@ const About = () => {
     }
 
     useEffect(() => {
+        getNavigator()
         getTeam();
         getClient();
     }, [])
@@ -50,13 +65,13 @@ const About = () => {
 
                     <div className='mt-3 px-[1em] md:px-[2em] lg:px-[5em] pb-[25em] bg-about' style={{backgroundImage: `url(${cover_about})`}}>
                         <div className='font-["oswald-medium"] text-[1.5em] md:text-[4em] pt-[5.5em] md:pt-[3em] pr-[1.5em] md:pr-[3em]'> 
-                            We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.
+                            {"acf" in content ? content.acf.heading : null}
                             <div className='border-t-[.2em] border-t-[#AA2E2C] w-[35%]'></div>
                         </div>
                     </div>
                     <div className='px-[1em] md:px-[2em] lg:px-[5em]'>
                         <div className='-mt-[3em] md:-mt-[3.5em] pl-[2.5em] lg:pl-[7em] text-[1.5em] md:text-[3em] font-["oswald-light"]'>
-                            We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.
+                            {"acf" in content ? content.acf.subheading : null}
                         </div>
                     </div>
 
@@ -75,36 +90,14 @@ const About = () => {
                             <img src={paper_top} alt="paper" className='w-[100%] object-cover' />
                             <div className='bg-white text-black px-[1em] md:px-[2em] lg:px-[5em] text-center'>
                                 <div className='uppercase text-[1.5em] md:text-[3.5em] font-["oswald-medium"] md:-mt-5 shdaow-black'>
-                                    {isAlpha['o'] ? 
-                                        'ORGANIC OUTCOME'
-                                    : isAlpha['e'] ? 
-                                        'Effective Execution'
-                                    : isAlpha['t'] ? 
-                                        'Trusted Technique'
-                                    : isAlpha['a1'] ?
-                                        'Authentic Ammunition'
-                                    : isAlpha['r'] ?
-                                        'Real Result'
-                                    : isAlpha['a2'] ?
-                                        'Aspirational Aim'
-                                    : null
-                                    }
+                                    {content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
+                                        isAlpha[item.letter === 'A' && item.letter_order === '4' ? 'a1' : item.letter === 'A' && item.letter_order === '6'? 'a2' : item.letter.toLowerCase()] ? item.letter_heading : null
+                                    )}
                                 </div>
                                 <div className='font-["oswald-light"] pt-5 text-[1em] md:text-[2em] lg:text-[3em]'>
-                                    {isAlpha['o'] ? 
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : isAlpha['e'] ? 
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : isAlpha['t'] ? 
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : isAlpha['a1'] ?
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : isAlpha['r'] ?
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : isAlpha['a2'] ?
-                                        'We are Navigators not only crafting the right message but also setting the measurable goals and will be  your guidance through Digital World Crowdedness.'
-                                    : null
-                                    }
+                                    {content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
+                                        isAlpha[item.letter === 'A' && item.letter_order === '4' ? 'a1' : item.letter === 'A' && item.letter_order === '6'? 'a2' : item.letter.toLowerCase()] ? item.description : null
+                                    )}
                                 </div>
                             </div>
                             <img src={paper_bottom} alt="paper" className='w-[100%] object-cover' />
