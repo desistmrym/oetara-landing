@@ -78,7 +78,7 @@ const About = () => {
 
                     <div className="pt-[3em]">
                         <div className="absolute border-t-2 lg:border-t-4 border-white w-[100%] mt-[3.5em] md:mt-[5em] lg:mt-[8em]"></div>
-                        <div className='relative grid grid-cols-6 py-10 gap-3 lg:gap-0 px-[1em] md:px-[2em] lg:px-[5em]'>
+                        <div className='relative grid grid-cols-6 py-10 gap-3 lg:gap-0 px-[1em] md:px-[2em] lg:px-[5em] cursor-hover'>
                             <img src={huruf_o} alt="o" className={`w-[90%] ${isAlpha['o'] ? 'scale-[1.5]' : ''} hover:scale-[1.5] transition-[.5s]`} onClick={() => setIsAlpha({o: true, e: false, t: false, a1: false, r: false, a2: false})} />
                             <img src={huruf_e} alt="e" className={`w-[90%] ${isAlpha['e'] ? 'scale-[1.5]' : ''} hover:scale-[1.5] transition-[.5s]`} onClick={() => setIsAlpha({o: false, e: true, t: false, a1: false, r: false, a2: false})} />
                             <img src={huruf_t} alt="t" className={`w-[90%] ${isAlpha['t'] ? 'scale-[1.5]' : ''} hover:scale-[1.5] transition-[.5s]`} onClick={() => setIsAlpha({o: false, e: false, t: true, a1: false, r: false, a2: false})} />
@@ -110,7 +110,7 @@ const About = () => {
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'>
                                 {
                                     team.map((item, i) => (
-                                        <div key={i} className='h-[50vh] relative teams'>
+                                        <div key={i} className='h-[50vh] relative teams cursor-hover'>
                                             <img src={item.acf.photo} alt={`team-${i}`} className='w-[100%] h-[100%] object-cover' />
                                             <div className="overlay">
                                                 <div className="text-[2em] leading-[1.2] lg:text-[2.5em]">{item.acf.name}</div>
@@ -132,7 +132,7 @@ const About = () => {
                         {client.length > 0 ? 
                             <div className="py-5 grid grid-cols-2 md:grid-cols-3 gap-1 lg::gap-8">
                                 {client.map((item,x) => 
-                                    <div key={x} className="px-5 py-5 h-[30vh]">
+                                    <div key={x} className="px-5 py-5 h-[30vh] cursor-hover">
                                         <img src={item.acf.logo} alt="" className='img-client w-[100%] h-[100%] object-contain' />
                                     </div>
                                 )}
