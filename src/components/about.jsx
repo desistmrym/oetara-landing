@@ -18,7 +18,7 @@ const About = () => {
         axios.get(url)
         .then(res => {
             setContent(res.data[0])
-            setShowLoad(false)
+            getTeam();
         })
         .catch(() => {
             setShowLoad(false)
@@ -31,7 +31,7 @@ const About = () => {
         axios.get(url)
         .then(res => {
             setTeam(res.data)
-            setShowLoad(false)
+            getClient();
         })
         .catch(() => {
             setShowLoad(false)
@@ -53,8 +53,6 @@ const About = () => {
 
     useEffect(() => {
         getNavigator()
-        getTeam();
-        getClient();
     }, [])
 
     return (
@@ -90,12 +88,12 @@ const About = () => {
                             <img src={paper_top} alt="paper" className='w-[100%] object-cover' />
                             <div className='bg-white text-black px-[1em] md:px-[2em] lg:px-[5em] text-center'>
                                 <div className='uppercase text-[1.5em] md:text-[3.5em] font-["oswald-medium"] md:-mt-5 shdaow-black'>
-                                    {content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
+                                    {"acf" in content && content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
                                         isAlpha[item.letter === 'A' && item.letter_order === '4' ? 'a1' : item.letter === 'A' && item.letter_order === '6'? 'a2' : item.letter.toLowerCase()] ? item.letter_heading : null
                                     )}
                                 </div>
                                 <div className='font-["oswald-light"] pt-5 text-[1em] md:text-[2em] lg:text-[3em]'>
-                                    {content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
+                                    {"acf" in content && content.acf.navigation.length > 0 && content.acf.navigation.map((item, key) => 
                                         isAlpha[item.letter === 'A' && item.letter_order === '4' ? 'a1' : item.letter === 'A' && item.letter_order === '6'? 'a2' : item.letter.toLowerCase()] ? item.description : null
                                     )}
                                 </div>
