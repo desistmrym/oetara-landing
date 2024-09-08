@@ -201,7 +201,7 @@ const Pages = () => {
           </div>
           <div id="needle-landing">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
-              <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[16em] absolute" />
+              <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[20em] absolute" />
             </div>
           </div>
         </div>
