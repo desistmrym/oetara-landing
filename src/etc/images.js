@@ -1,9 +1,9 @@
-import arrow from '../assets/svg/compass1.svg';
+import arrow from '../assets/images/pin-compass.png';
 import art1 from '../assets/images/art1.png';
 import oetara from '../assets/images/logo/oetara-logo.png';
-import A from '../assets/images/about.png';
+import A from '../assets/images/navigation.png';
 import W from '../assets/images/work.png';
-import C from '../assets/images/contact.png';
+import C from '../assets/images/email-us.png';
 import S from '../assets/images/service.png';
 import moon from '../assets/images/moon.png';
 import loader from '../assets/images/compass-load.gif';
@@ -27,6 +27,7 @@ import flow3 from '../assets/images/icon/search-data.png';
 import flow4 from '../assets/images/icon/learning.png';
 import flow5 from '../assets/images/icon/money-growth.png';
 import flow6 from '../assets/images/icon/seo-report.png';
+import compass_white from '../assets/images/compass-white.png';
 
 const flow_service =
     {
@@ -84,5 +85,6 @@ export {
     paper_top,
     paper_bottom,
     footer_service,
-    flow_service
+    flow_service,
+    compass_white
 }

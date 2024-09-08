@@ -7,7 +7,7 @@ import vid_work_static from "../assets/video/work-static.png";
 import vid_work_animated from "../assets/video/work-moving.webp";
 import vid_contact_static from "../assets/video/building-static.png";
 import vid_contact_animated from "../assets/video/building-moving.webp";
-import { arrow, A, W, C, S, oetara } from "../etc/images";
+import { arrow, A, W, C, S, oetara, compass_white } from "../etc/images";
 import About from "../components/about";
 import Work from "../components/work";
 import Service from "../components/service";
@@ -45,7 +45,7 @@ const Pages = () => {
     let x = current.offsetLeft + current.clientWidth / 2;
     let y = current.offsetTop + current.clientHeight / 2;
     let rad = Math.atan2(event.pageX - x, event.pageY - y);
-    let rot = rad * (180 / Math.PI) * -1 + 180;
+    let rot = (rad * (180 / Math.PI) * -1 + 180) + 90;
 
     current.style.transform = "rotate(" + rot + "deg)";
     // eye.css({
@@ -79,12 +79,12 @@ const Pages = () => {
         onMouseMove={(event) => handleMouse(event)}
       >
         <div
-          style={{
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            position: "absolute",
-            height: "100vh",
-            width: "100%",
-          }}
+          // style={{
+          //   backgroundColor: "rgba(0, 0, 0, 0.5)",
+          //   position: "absolute",
+          //   height: "100vh",
+          //   width: "100%",
+          // }}
         ></div>
         <div className="pt-8 text-white text-[3rem] leading-5 tracking-[-2px] text-center font-['europa-grotesk-sh-med']">
           {/* Oetara */}
@@ -103,80 +103,96 @@ const Pages = () => {
                 onMouseEnter={() => handleAboutHover(true)}
                 onMouseLeave={() => handleAboutHover(false)}
               >
-                  <div className="absolute z-[99] p-5 w-[100%] h-[100%] rounded-[50%]">
-                    <img src={A} alt="" className="w-[100%] rounded-[50%]" />
+                  <div className={`absolute z-[99] p-5 w-[100%] top-[12%] flex justify-center rounded-[50%]`}>
+                    <img src={A} alt="" className="w-[20%]" />
                   </div>
-                  <div className="absolute z-[999] p-5 w-[100%] h-[100%] rounded-[50%]">
-                    <div className="text-about relative h-[100%] text-white text-[3vh] sm:text-[4vh] lg:text-[5vh] text-center pl-[1.5em] pt-[1em]">
-                      About
+                  {isAboutHovered ?
+                    <div className="absolute z-[999] flex justify-center w-[100%] h-[100%] rounded-[50%] font-['oswald']">
+                      <div className={`relative w-[100%] h-[100%] text-animate text-white text-[1.5vh] md:text-[2.5vh] lg:text-[3vh] text-center pl-[4em] hover:pl-[5.5em] pt-[24%] md:pt-[22%]`}>
+                        avigation
+                      </div>
                     </div>
-                  </div>
+                  : null}
                   <img
-                    className="p-8 rounded-[50%] h-[100%] object-cover"
+                    className="absolute top-3 left-2 rounded-[50%] h-[100%] object-cover"
                     src={isAboutHovered ? vid_about_animated : vid_about_static}
                     alt="About"
                   />
-              </div>
-              <div
-                onClick={(e) => handleRedirect(e, "work")}
-                className="clip2 cursor-hover"
-                onMouseEnter={() => handleWorkHover(true)}
-                onMouseLeave={() => handleWorkHover(false)}
-              >
-                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <img src={W} alt="" className="w-[100%] rounded-[50%]" />
-                </div>
-                <div className="absolute p-5 z-[999] w-[100%] h-[100%] rounded-[50%]">
-                  <div className="text-work relative text-white h-[100%] text-[3vh] sm:text-[4vh] lg:text-[6vh] text-center pl-[11em] md:pl-[10em] pt-[6em] md:pt-[6em]">
-                    Work
-                  </div>
-                </div>
-                <img
-                  className="rounded-[50%] p-5 h-[100%] object-cover"
-                  src={isWorkHovered ? vid_work_animated : vid_work_static}
-                  alt="Work"
-                />
+                  <div style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}} className="absolute w-full h-full top-3 rounded-[50%]"></div>
+                  <img src={compass_white} alt="" className="absolute w-[100%] object-cover" />
               </div>
               <div
                 onClick={(e) => handleRedirect(e, "email-us")}
-                className="clip3 cursor-hover"
+                className="clip2 cursor-hover"
                 onMouseEnter={() => handleContactHover(true)}
                 onMouseLeave={() => handleContactHover(false)}
               >
-                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <img src={C} alt="" className="w-[100%] rounded-[50%]" />
+                <div className={`absolute p-5 z-[99] flex justify-end right-[13%] lg:justify-center lg:left-[24%] text-contact top-[38%] md:top-[41%] w-[100%] rounded-[50%]`}>
+                  <img src={C} alt="" className="w-[16%] rounded-[50%]" />
                 </div>
-                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <div className="text-white text-contact h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center pl-[8vh] lg:pl-[2em] pt-[11em] md:pt-[12vh] lg:pt-[14em]">
-                    Contact
+                {isContactHovered ? 
+                  <div className="absolute p-5 z-[999] w-[100%] h-[100%] flex justify-end rounded-[50%]">
+                    <div className="relative text-white text-animate hover:pl-[17em] w-[100%] h-[100%] text-[1.5vh] sm:text-[2.5vh] lg:text-[3vh] text-center pl-[15em] pt-[12em] md:pt-[11em] lg:pt-[13em]">
+                      mail <br></br>Us
+                    </div>
                   </div>
-                </div>
+                : null}
+                  <div style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}} className="absolute w-full h-full rounded-[50%] right-[2%]"></div>
+                  <img src={compass_white} alt="" className="absolute w-[100%] object-cover" />
                 <img
                   className="rounded-[50%] p-5 h-[100%] object-cover"
-                  src={
-                    isContactHovered ? vid_contact_animated : vid_contact_static
-                  }
-                  alt="Contact"
+                  src={isContactHovered ? vid_work_animated : vid_work_static}
+                  alt="Email-us"
                 />
               </div>
               <div
                 onClick={(e) => handleRedirect(e, "service")}
-                className="clip4 cursor-hover"
+                className="clip3 cursor-hover"
                 onMouseEnter={() => handleServiceHover(true)}
                 onMouseLeave={() => handleServiceHover(false)}
               >
-                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <img src={S} alt="" className="w-[100%] rounded-[50%]" />
+                <div className="absolute p-5 z-[99] bottom-[12%] flex justify-center w-[100%] rounded-[50%]">
+                  <img src={S} alt="" className="w-[12%] rounded-[50%]" />
                 </div>
-                <div className="absolute p-5 z-[99] w-[100%] h-[100%] rounded-[50%]">
-                  <div className="text-service text-white h-[100%] text-[3vh] md:text-[4vh] lg:text-[5vh] text-center -ml-[8em] md:-ml-[13em] lg:-ml-[11em] pt-[5.5em] md:pt-[8em] lg:pt-[6.5em]">
-                    Service
+                {isServiceHovered ? 
+                  <div className="absolute p-5 z-[99] w-[100%] h-[100%] flex justify-end rounded-[50%]">
+                    <div className="text-white text-animate hover:pl-[4.5em] w-[100%] h-[100%] text-[1.5vh] md:text-[2.5vh] lg:text-[3vh] text-center pl-[5vh] md:pl-[8vh] lg:pl-[3em] pt-[20em] md:pt-[15em] lg:pt-[21.5em]">
+                      ervice
+                    </div>
                   </div>
-                </div>
+                : null}
+                <div style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}} className="absolute w-full h-full rounded-[50%] bottom-[2%]"></div>
+                <img src={compass_white} alt="" className="absolute  w-[100%] object-cover" />
                 <img
                   className="rounded-[50%] p-5 h-[100%] object-cover"
                   src={
-                    isServiceHovered ? vid_service_animated : vid_service_static
+                    isServiceHovered ? vid_contact_animated : vid_contact_static
+                  }
+                  alt="Service"
+                />
+              </div>
+              <div
+                onClick={(e) => handleRedirect(e, "work")}
+                className="clip4 cursor-hover"
+                onMouseEnter={() => handleWorkHover(true)}
+                onMouseLeave={() => handleWorkHover(false)}
+              >
+                <div className="absolute z-[99] w-[100%] flex justify-center md:justify-start top-[44%] -left-[28%] md:left-[14%] rounded-[50%]">
+                  <img src={W} alt="" className="w-[14%] rounded-[50%]" />
+                </div>
+                {isWorkHovered ? 
+                  <div className="absolute p-5 z-[99] w-[100%] h-[100%] flex justify-start rounded-[50%]">
+                    <div className="text-animate text-white w-[100%] h-[100%] text-[1.5vh] md:text-[2.5vh] lg:text-[3vh] pt-[22vh] lg:pt-[40vh] pl-[8.5vh] md:pl-[11vh] lg:pl-[18vh] hover:pl-[9.5vh] md:hover:pl-[20vh] lg:hover:pl-[20.5vh]">
+                      ork
+                    </div>
+                  </div>
+                : null}
+                <div style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}} className="absolute w-full h-full rounded-[50%]"></div>
+                <img src={compass_white} alt="" className="absolute w-[100%] object-cover" />
+                <img
+                  className="rounded-[50%] p-5 h-[100%] object-cover"
+                  src={
+                    isWorkHovered ? vid_service_animated : vid_service_static
                   }
                   alt="Service"
                 />
@@ -185,7 +201,7 @@ const Pages = () => {
           </div>
           <div id="needle-landing">
             <div className="flex justify-center items-center w-[100%] h-[100vh]">
-              <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[10em]" />
+              <img ref={arrowRef} src={arrow} alt="" className="w-[8em] md:w-[16em] absolute" />
             </div>
           </div>
         </div>
