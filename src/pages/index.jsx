@@ -79,12 +79,12 @@ const Pages = () => {
         onMouseMove={(event) => handleMouse(event)}
       >
         <div
-          // style={{
-          //   backgroundColor: "rgba(0, 0, 0, 0.5)",
-          //   position: "absolute",
-          //   height: "100vh",
-          //   width: "100%",
-          // }}
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            position: "absolute",
+            height: "100vh",
+            width: "100%",
+          }}
         ></div>
         <div className="pt-8 text-white text-[3rem] leading-5 tracking-[-2px] text-center font-['europa-grotesk-sh-med']">
           {/* Oetara */}
