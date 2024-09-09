@@ -8,19 +8,13 @@ import vid_work_animated from "../assets/video/work-moving.webp";
 import vid_contact_static from "../assets/video/building-static.png";
 import vid_contact_animated from "../assets/video/building-moving.webp";
 import { arrow, A, W, C, S, oetara, compass_white } from "../etc/images";
-import About from "../components/about";
-import Work from "../components/work";
-import Service from "../components/service";
-import Contact from "../components/contact";
 import { useNavigate } from "react-router-dom";
+import { motion, useIsPresent } from 'framer-motion';
 
 const Pages = () => {
   const arrowRef = useRef();
+  const isPresent = useIsPresent();
   let navigate = useNavigate()
-  const [showAbout, setShowAbout] = useState(false);
-  const [showWork, setShowWork] = useState(false);
-  const [showService, setShowService] = useState(false);
-  const [showContact, setShowContact] = useState(false);
   const [isServiceHovered, setIsServiceHovered] = useState(false);
   const [isWorkHovered, setIsWorkHovered] = useState(false);
   const [isContactHovered, setIsContactHovered] = useState(false);
@@ -28,15 +22,6 @@ const Pages = () => {
 
   const handleRedirect = (e, type) => {
       navigate('/'+type)
-    // if (type === "navigate") {
-    //   setShowAbout(!showAbout);
-    // } else if (type === "work") {
-    //   setShowWork(!showWork);
-    // } else if (type === "service") {
-    //   setShowService(!showService);
-    // } else if (type === "contact") {
-    //   setShowContact(!showContact);
-    // }
   };
 
   const handleMouse = (event) => {
@@ -205,70 +190,14 @@ const Pages = () => {
             </div>
           </div>
         </div>
-        {/* {showAbout ? (
-          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 lg:mt-5 w-[100%]">
-            <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
-              <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
-                <div
-                  className='text-black text-2xl w-[100%] flex justify-end font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer'
-                  onClick={() => setShowAbout(false)}
-                >
-                  <div className="close-x">X</div>
-                </div>
-              </div>
-              <About />
-            </div>
-          </div>
-        ) : null}
-
-        {showWork ? (
-          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
-            <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
-              <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
-                <div
-                  className='text-black text-2xl flex justify-end font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer'
-                  onClick={() => setShowWork(false)}
-                >
-                  <div className="close-x">X</div>
-                </div>
-              </div>
-              <Work />
-            </div>
-          </div>
-        ) : null}
-
-        {showService ? (
-          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
-            <div className="w-[100%] h-[100vh] bg-white overflow-y-scroll scroll-bar">
-              <div className="fixed float-right w-[100%] px-0 md:px-[6em] lg:px-[8em]">
-                <div
-                  className='text-black text-2xl flex justify-end font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer'
-                  onClick={() => setShowService(false)}
-                >
-                  <div className="close-x">X</div>
-                </div>
-              </div>
-              <Service />
-            </div>
-          </div>
-        ) : null}
-
-        {showContact ? (
-          <div className="modal fixed top-0 p-0 md:p-12 lg:p-16 md:mt-8 lg:mt-5 w-[100%]">
-            <div className="w-[100%] bg-white overflow-y-scroll scroll-bar">
-              <div className="w-[100%] fixed float-right px-0 md:px-[6em] lg:px-[8em]">
-                <div
-                  className='text-black w-[100%] text-2xl flex justify-end font-["europa-grotesk-sh-med"] pr-5 pt-3 cursor-pointer'
-                  onClick={() => setShowContact(false)}
-                >
-                  <div className="close-x">X</div>
-                </div>
-              </div>
-              <Contact />
-            </div>
-          </div>
-        ) : null} */}
       </div>
+      {/* <motion.div
+        initial={{ scaleX: 1 }}
+        animate={{ scaleX: 0, transition: { duration: 0.8, ease: "circOut" } }}
+        exit={{ scaleX: 1, transition: { duration: 0.8, ease: "circIn" } }}
+        style={{ originX: isPresent ? 0 : 1 }}
+        className="privacy-screen"
+      /> */}
     </>
   );
 };
