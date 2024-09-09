@@ -103,22 +103,22 @@ const About = () => {
                     <HeaderLogo />
 
                     <div className='mt-3 px-[1em] md:px-[2em] lg:px-[5em] pb-[25em] bg-about' style={{backgroundImage: `url(${cover_about})`}}>
-                            <div className='font-["oswald-medium"] text-[1.5em] md:text-[4em] pt-[5.5em] md:pt-[3em] pr-[1.5em] md:pr-[3em]'> 
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 20 }}
-                                    transition={{ duration: 0.8 }}
-                                >
-                                    {"acf" in content ? content.acf.heading : null}
-                                </motion.div>
-                                <motion.div 
-                                    initial={{ width: '0%' }}
-                                    animate={{ width: '100%', transition: { duration: 1.5, delay: .5 } }}
-                                >
-                                    <div className='border-t-[.2em] border-t-[#AA2E2C] w-[35%]'></div>
-                                </motion.div>
-                            </div>
+                        <div className='font-["oswald-medium"] text-[1.5em] md:text-[4em] pt-[5.5em] md:pt-[3em] pr-[1.5em] md:pr-[3em]'> 
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 20 }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                {"acf" in content ? content.acf.heading : null}
+                            </motion.div>
+                            <motion.div 
+                                initial={{ width: '0%' }}
+                                animate={{ width: '100%', transition: { duration: 1.5, delay: .5 } }}
+                            >
+                                <div className='border-t-[.2em] border-t-[#AA2E2C] w-[35%]'></div>
+                            </motion.div>
+                        </div>
                     </div>
                     <div className='px-[1em] md:px-[2em] lg:px-[5em]'>
                         <div className='-mt-[3em] md:-mt-[3.5em] pl-[2.5em] lg:pl-[7em] text-[1.5em] md:text-[3em] font-["oswald-light"]'>
@@ -152,7 +152,7 @@ const About = () => {
                                 <motion.img
                                     ref={letterRef}
                                     key={letter}
-                                    src={letter === 'a1' || letter === 'a2' ? huruf_a : eval(`huruf_${letter}`)}
+                                    src={letter === 'a1' || letter === 'a2' ? huruf_a : letter === 'o' ? huruf_o : letter === 'e' ? huruf_e : letter === 't' ? huruf_t : letter === 'r' ? huruf_r : eval(`huruf_${letter}`)}
                                     alt={letter}
                                     className={`w-[90%] hover:scale-[1.5]`}
                                     onClick={() => {setIsAlpha({...Object.fromEntries(Object.keys(isAlpha).map(k => [k, k === letter]))}), console.log(isAlpha)}}
