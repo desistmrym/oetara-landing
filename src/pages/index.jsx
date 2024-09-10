@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
-import vid_about_static from "../assets/video/about-static.png";
-import vid_about_animated from "../assets/video/about-moving.webp";
-import vid_service_static from "../assets/video/blackhole-static.png";
-import vid_service_animated from "../assets/video/blackhole-moving.webp";
+import vid_about_static from "../assets/video/building-static.png";
+import vid_about_animated from "../assets/video/building-moving.webp";
+import vid_service_static from "../assets/video/about-static.png";
+import vid_service_animated from "../assets/video/about-moving.webp";
 import vid_work_static from "../assets/video/work-static.png";
 import vid_work_animated from "../assets/video/work-moving.webp";
-import vid_contact_static from "../assets/video/building-static.png";
-import vid_contact_animated from "../assets/video/building-moving.webp";
+import vid_contact_static from "../assets/video/blackhole-static.png";
+import vid_contact_animated from "../assets/video/blackhole-moving.webp";
 import { arrow, A, W, C, S, oetara, compass_white } from "../etc/images";
 import { useNavigate } from "react-router-dom";
 import { motion, useIsPresent } from 'framer-motion';

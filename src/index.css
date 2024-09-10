@@ -73,7 +73,7 @@ a:hover {
 body {
   margin: 0;
   font-family: 'oswald-medium', sans-serif;
-  cursor: url('./assets/cursor/cursor.svg') 64 64, pointer;
+  cursor: url('./assets/cursor/cursor.svg') 16 16, pointer;
   /* display: flex;
   place-items: center;
   min-width: 320px;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .cursor-hover {
-  cursor: url('./assets/cursor/cursor-hover.svg') 64 64, pointer !important;
+  cursor: url('./assets/cursor/cursor-hover.svg') 16 16, pointer !important;
   transition: 5s;
 }
 

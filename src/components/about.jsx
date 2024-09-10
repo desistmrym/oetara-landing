@@ -99,7 +99,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             >
             {!showLoad ? 
-                <div className="pt-5 lg:pt-4 bg-black text-white">
+                <div className="pt-5 text-white bg-black lg:pt-4">
                     <HeaderLogo />
 
                     <div className='mt-3 px-[1em] md:px-[2em] lg:px-[5em] pb-[25em] bg-about' style={{backgroundImage: `url(${cover_about})`}}>
@@ -158,7 +158,7 @@ const About = () => {
                                     onClick={() => {setIsAlpha({...Object.fromEntries(Object.keys(isAlpha).map(k => [k, k === letter]))}), console.log(isAlpha)}}
                                     initial={{ scale: 0 }}
                                     animate={{ scale: letterInView ? isAlpha[letter] ? 1.5 : 1 : 0 }}
-                                    transition={{ duration: 0.5, delay: 0.5 + index * 0.3 }}
+                                    transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
                                 />
                             ))}
                         </motion.div>
@@ -201,7 +201,7 @@ const About = () => {
                             OUR NAVIGATORS
                         </motion.div>
                         {team.length > 0 ? 
-                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'>
+                            <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4'>
                                 {
                                     team.map((item, i) => (
                                         <div key={i} className='h-[50vh] relative teams cursor-hover overflow-hidden'>
@@ -247,7 +247,7 @@ const About = () => {
                             OUR CLIENT
                         </motion.div>
                         {client.length > 0 ? 
-                            <div className="py-5 grid grid-cols-2 md:grid-cols-3 gap-1 lg::gap-8">
+                            <div className="grid grid-cols-2 gap-1 py-5 md:grid-cols-3 lg::gap-8">
                                 {client.map((item, x) => 
                                         <div key={x} className="px-5 py-5 h-[30vh] cursor-hover">
                                             <motion.img 
