@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiUrl } from "../etc/helper";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Loader from "./loader";
+import { motion } from 'framer-motion';
 
 const DetailWork = () => {
     let { id } = useParams()
@@ -41,40 +42,85 @@ const DetailWork = () => {
         getData();
     },[])
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             {!showLoad ? 
                 <div>
                     {"acf" in data && "acf" in getLogo ? 
                         <div className="bg-black text-white flex justify-between flex-wrap lg:flex-nowrap">
                             <div className="w-[100%] lg:w-[40%] flex justify-center items-center h-[100vh]">
                                 <div className="px-[1em] md:px-[5em]">
-                                    <div className="font-bold text-[2em] lg:text-[3em] py-5 text-left" dangerouslySetInnerHTML={{__html: data.title.rendered}} ></div>
-                                    <div className="py-3" dangerouslySetInnerHTML={{__html: data.acf.case_description}}></div>
+                                    <motion.div 
+                                        initial={{ opacity: 0, y: -50 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8 }}
+                                        className="font-bold text-[2em] lg:text-[3em] py-5 text-left" 
+                                        dangerouslySetInnerHTML={{__html: data.title.rendered}} 
+                                    ></motion.div>
+                                    <motion.div 
+                                        initial={{ opacity: 0, y: -50 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.5 }}
+                                        className="py-3" 
+                                        dangerouslySetInnerHTML={{__html: data.acf.case_description}}
+                                    ></motion.div>
                                     <table className="font-bold">
-                                        <tr>
+                                        <motion.tr
+                                            initial={{ opacity: 0, y: -50 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 1 }}
+                                        >
                                             <td className="py-1">Client</td>
                                             <td className="px-3">:</td>
                                             <td>{data.acf.client[0].post_title}</td>
-                                        </tr>
-                                        <tr>
+                                        </motion.tr>
+                                        <motion.tr
+                                            initial={{ opacity: 0, y: -50 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 1.5 }}
+                                        >
                                             <td className="py-1">Service</td>
                                             <td className="px-3">:</td>
                                             <td>{data.acf.service_type[0].name}</td>
-                                        </tr>
-                                        <tr>
+                                        </motion.tr>
+                                        <motion.tr
+                                            initial={{ opacity: 0, y: -50 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 1.8 }}
+                                        >
                                             <td className="py-1">Location</td>
                                             <td className="px-3">:</td>
-                                            <td></td>
-                                        </tr>
+                                            <td>{data.acf.location}</td>
+                                        </motion.tr>
                                     </table>
                                     <div className="py-5" >
-                                        <a href={data.acf.client_website} target="_blank" className="underline text-white cursor-hover">Visit Website</a>
+                                        <motion.a 
+                                            initial={{ opacity: 0, y: -50 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 2.2 }}
+                                            href={data.acf.client_website} 
+                                            target="_blank" 
+                                            className="underline text-white cursor-hover"
+                                        >
+                                            Visit Website
+                                        </motion.a>
                                     </div>
                                 </div>
                             </div>
                             <div className="w-[100%] lg:w-[60%]">
                                 <div className="absolute right-0 top-0 lg:relative">
-                                    <img src={getLogo.acf.logo} alt="logo" className="w-[8em] md:w-[16em] lg:w-[100%] lg:h-[100vh] object-cover" />
+                                    <motion.img 
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.8}}
+                                        src={getLogo.acf.logo} 
+                                        alt="logo" 
+                                        className="w-[8em] md:w-[16em] lg:w-[100%] lg:h-[100vh] object-cover" 
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -85,7 +131,7 @@ const DetailWork = () => {
             : 
                 <Loader />
             }
-        </>
+        </motion.div>
     )
 }
 
