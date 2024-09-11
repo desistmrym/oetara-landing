@@ -97,7 +97,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            >
+        >
             {!showLoad ? 
                 <div className="pt-5 text-white bg-black lg:pt-4">
                     <HeaderLogo />

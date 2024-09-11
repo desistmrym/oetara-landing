@@ -58,7 +58,12 @@ const Pages = () => {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div
         className="bg-cover h-[100vh] overflow-hidden"
         onMouseMove={(event) => handleMouse(event)}
@@ -198,7 +203,7 @@ const Pages = () => {
         style={{ originX: isPresent ? 0 : 1 }}
         className="privacy-screen"
       /> */}
-    </>
+    </motion.div>
   );
 };
 
